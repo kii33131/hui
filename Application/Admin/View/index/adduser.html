@@ -1,0 +1,47 @@
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="{:U('Index/index')}">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Index/index')}">网站管理</a> <span class="divider">/</span></li>
+	    <li class="active">网站设置</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form id="tab"  action="{:U('Index/index')}" method="post">
+					<fieldset>
+						<legend>网站设置</legend>
+						<label>网站标题</label>
+						<input type="text" name="title" value="<?php echo $list['title']?>" class="input-xlarge"  placeholder="请输入网站标题..." >
+
+
+
+						<label>状态</label>
+						<label class="radio inline">
+						<input type="radio" name="status" id="optionsRadios1" <?php if($list['status']==0){ echo 'checked'; }?> value="0" checked>
+						正常
+						</label>
+						<label class="radio inline">
+						<input type="radio" <?php if($list['status']==1){ echo 'checked'; }?> name="status" id="optionsRadios2" value="1">禁用
+						</label>
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 编 辑 </button>
+							
+						</div>
+					</fieldset>
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

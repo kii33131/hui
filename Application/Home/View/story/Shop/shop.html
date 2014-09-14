@@ -1,0 +1,80 @@
+	<style>
+    .wocao{
+        width:20px;
+
+    }
+    </style>
+
+    <script>
+    function jian(i){
+        var num = -1;
+        $.get('__URL__/index',{'num':num,'ids':i},function(data){
+
+            history.go(0)
+
+        })
+
+    }
+
+    function jia(i){
+        var num = 1;
+
+         $.get('__URL__/index',{'num':num,'ids':i},function(data){
+
+            history.go(0)
+
+        })
+
+
+    }
+    </script>
+    <div class="cart_content">
+    	<div class="car_con_top">
+        	<div class="car_con_top_left">我的购物车</div>
+        	<div class="car_con_top_right"><img src="__PUBLIC__/imgaes/Cart_06.jpg" /></div>
+        </div>
+        <div class="car_con_bot">
+        	<table width="1045" cellpadding="0" cellspacing="0">
+            	<tr>
+                	<th width="172">编号</th>
+                	<th width="100">商品</th>
+                	<th width="276">名称</th>
+                	<th width="112">单价（元）</th>
+                	<th width="112">数量</th>
+                	<th width="137">小计（元）</th>
+                	<th width="136">操作</th>
+                </tr>
+                <?php if(!empty($cookies)):?>
+
+                    <?php foreach($cookies as $arr):?>
+                <tr>
+                	<td><?php echo $arr['bianhao']?></td>
+                	<td><img style="height:58px;width:65px;" src="__ROOT__/Uploads/<?php echo  getonepicture($arr['id']);?>" /></td>
+                	<td><?php echo $arr['name']?></td>
+                	<td>￥<?php echo $arr['money']?>元</td>
+                	<td><?php echo $arr['num']?></td>
+                	<td>￥<?php echo $arr['num']*$arr['money'] ; ?>元</td>
+                	<td>
+                    	<!--<h1>删除</h1>
+                	  	<h1>放入收藏夹</h1>-->
+                        <span><a href="{:U('Shop/index',array('ids'=>$arr['id'],'num'=>-1))}">-</a><input class="wocao" readonly  name="num" type="text" value="<?php echo $arr['num']?>" class="span_text" /><a href="{:U('Shop/index',array('ids'=>$arr['id'],'num'=>1))}">+</a></span>
+                        <a href="{:U('Shop/shanchu',array('id'=>$arr['id']))}">删除</a>
+                    </td>
+
+                </tr>
+            <?php endforeach;?>
+            <?php endif;?>
+
+            </table>
+        </div>
+        <div class="cart_bottom">
+        	<p class="cart_bot_p1">
+            	比市场价<span>￥<?php echo $num1?>元</span>节省了<span>￥<?php echo $cha?>元</span>
+            </p>
+            <strong>商品总金额：<span>￥<?php echo $num?>元</span></strong>
+            <p class="cart_bot_p2">
+            	<span><a href="{:U('index/index')}"><input name="" type="image" src="__PUBLIC__/imgaes/Cart_11.jpg" /></a></span>
+            	<span><a href="{:U('Shop/jiesuan')}"><input name="" type="image" src="__PUBLIC__/imgaes/Cart_13.jpg" /></a></span>
+            </p>
+        </div>
+    </div>

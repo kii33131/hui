@@ -1,0 +1,66 @@
+
+<script type="text/javascript">
+$(function(){
+
+    $(".registerform1").Validform({
+        tiptype:2
+    });
+})
+</script>
+<!--内容区域-->
+<div class="help_content">
+	<div class="effective_div">
+    	<!--内容左边-->
+    	<include file="User:comment" />
+        <!--内容右边-->
+        <div class="help_con_right">
+            <div class="vip_top">账户安全</div>
+            <div class="vip_info">
+
+
+
+             <!--       
+            <form action="{:U('User/vip')}" class="isterform"  method="post">
+            	<table cellpadding="0" cellspacing="0" border="0">
+                	<tr>
+                    	<td width="71">原始密码:</td>
+                    	<td width="71"><input   name="password" type="password" datatype="*" errormsg="原始密码不能为空" class="vip_text" /><span></span></td>
+                    </tr>
+                	<tr>
+                    	<td width="71">新密码:</td>
+                    	<td width="71"><input name="newpassword" type="password" datatype="*" errormsg="原始密码不能为空" class="vip_text" /></td>
+                    </tr>
+                
+                    <tr>
+                    	<td colspan="2" ><input name="" type="image" src="imgaes/vip_2_03.jpg"  class="vip_image"/></td>
+                    </tr>
+                </table>
+                </form>   -->
+
+
+        <form class="registerform1" action="{:U('User/vip')}" method="post">
+            <table>
+              
+                <tr>
+                    <td width="93">原始密码</td>
+                    <td width="455"><p><input  class="cart2_text inputxt" name="password" type="password" datatype="*"  errormsg="原始密码不能为空" /></p><p>必填</p></td>
+                    <td width="109">新密码</td>
+                    <td width="390"><p><input name="newpassword" type="password" datatype="*" errormsg="新密码不能为空" class="cart2_text" /></p><p>必填</p></td>
+                </tr>
+               
+               
+               
+                    <input style="position:absolute;left:200px;top:350px;" name="" type="image" class="cart2_image" src="__PUBLIC__/imgaes/mima.jpg" />
+               
+            </table>
+           </form> 
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+</div>

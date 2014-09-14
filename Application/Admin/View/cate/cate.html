@@ -1,0 +1,97 @@
+
+        <div class="header">
+            
+            <h1 class="page-title">分类管理</h1>
+        </div>
+        
+        <ul class="breadcrumb">
+            <li><a href="#">首页</a> <span class="divider">/</span></li>
+            <li><a href="{:U('Cate/index')}">分类管理</a> <span class="divider">/</span></li>
+            <li class="active">分类列表</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                    
+              <div class="btn-toolbar row-fluid">
+                  
+                  <!-- <button class="btn">Import</button>
+                  <button class="btn">Export</button> -->
+                 
+                     <a href="{:U('cate/add',array('pid'=>0))}">
+                      <button class="btn btn-primary "> 添加一级分类</button></a>     
+                        
+                  <form class="form-search" method="get" action="{:U('Cate/cateans')}">
+                      <div class="input-append pull-right">
+                        <input class="input-large" id="appendedInputButton" name="title" type="text" placeholder="搜索...">
+
+
+                        <input class="btn" type="submit" value="搜索">
+                      </div>
+                      
+                  </form>
+               
+              </div>
+
+              <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>pid</th>
+                        <th>分类名</th>
+                        <th>注册时间</th>
+                        <th>修改时间</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php if(!empty($list)):?>
+                      <?php foreach($list as $arr):?>
+                      <tr>
+                        <td><?php echo $arr['id']?></td>
+                        <td><?php echo $arr['pid']?></td>
+                        <td><?php echo $arr['title']?></td>
+                        <td><?php echo date('Y-m-d',$arr['created'])?></td>
+                        <td><?php echo date('Y-m-d',$arr['modified'])?></td>
+                        <td>
+                            <a href="{:U('cate/edit',array('id'=>$arr['id']))}"><i class="icon-pencil"></i></a>
+
+                            <a class="offset1" href="{:U('cate/delete',array('id'=>$arr['id']))}" ><i class="icon-remove"></i></a>
+
+                             <a href="{:U('cate/add',array('pid'=>$arr['id']))}" ><i class="icon-plus"></i></a>
+                             <a href="{:U('cate/index',array('pid'=>$arr['id']))}"><i class="icon-tag"></i></a>
+                            
+                        </td>
+                      </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                    </tbody>
+
+                  </table>
+              </div>
+              <div id="page">
+              <?php echo $page;?>
+              </div>
+               <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+              
+              <footer>
+                  <hr>
+                  <p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+              </footer>
+                    
+            </div>
+        </div>sss

@@ -1,0 +1,168 @@
+<style>
+  .bb{display:none;}
+
+</style>
+<script>
+
+  
+    function nima(i){
+
+      var ids = i;
+
+      //$(selector).addClass(class)
+      if($('.aa'+ids).val()*1==1){
+
+        $('.mm'+ids).addClass("bb")
+         $('.zz'+ids).removeClass("bb")
+      }
+
+      else{
+         $('.mm'+ids).removeClass("bb")
+
+      }
+
+    
+      var num = -1;
+
+      var dan =$('.chadan').val();
+  
+      $.post('__URL__/ajaxjian',{'ids':ids,'num':num},function(date){
+
+     
+      $('.aa'+ids).val(date);
+      $('.aaa'+ids).html($('.aaaa'+ids).html()*1*date);
+      $('.mimai').html($('.mimai').html()*1-$('.aaaa'+ids).html()*1)
+      if($('.mimai').html()*1<dan*1){
+
+        $('.mimai').html(dan);
+      }
+
+      
+
+     
+      })
+
+
+    }
+
+
+
+    
+     function nimai(i){
+
+      var ids = i;
+
+    
+      var num = 1;
+
+      //kucun
+
+      if($('.aa'+ids).val()*1 == $('.kucun'+ids).val()*1){
+
+        $('.zz'+ids).addClass("bb")
+      }
+
+      else{
+         $('.zz'+ids).removeClass("bb")
+
+      }
+
+    
+  
+      $.post('__URL__/ajaxjia',{'ids':ids,'num':num},function(date){
+
+     
+      $('.aa'+ids).val(date);
+      $('.aaa'+ids).html($('.aaaa'+ids).html()*1*date);
+       $('.mimai').html($('.mimai').html()*1+$('.aaaa'+ids).html()*1)
+      
+
+
+     
+      })
+
+
+    } 
+    
+</script>
+<div class="zhifu_1 mid clear">
+<input type="hidden" class="chadan" value="<?php echo $dan?>">
+<input type="hidden" class="zuida" value="<?php echo $zuida?>">
+  <h5><span>全部商品</span>
+  <!--
+    <p>已选商品（不含运费）：<strong>￥320.00</strong><b><a href="#">结算</a></b></p> -->
+  </h5>
+  <div class="zhifu_con">
+    <table width="1000" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" height="44">&nbsp;</td>
+        
+        <td height="44" colspan="2"><label style="padding:2px 5px 0 0; float:left;">
+          <!--
+          <input type="checkbox" name="checkbox" id="checkbox"> -->
+          </label>
+          全选</td> 
+
+        <td width="390" height="44">商品信息</td>
+        <td width="140" height="44">单价</td>
+        <td width="119" height="44">数量</td>
+        <td width="119" height="44">金额</td>
+        <td height="44">操作</td>
+      </tr>
+
+      <?php if(!empty($list)):?>
+
+      <?php foreach($list as $arr):?>
+      <tr bgcolor="#ffeef3" style="color:#666;">
+        <td width="10" height="115">&nbsp;</td>
+        <td width="28" height="115" align="right" valign="top"><label style="padding:12px 7px 0 0; float:right;">
+         <!-- <input type="checkbox" name="checkbox2" id="checkbox2"> -->
+          </label></td>
+        <td width="96" height="115"><img  style="height:58px;width:65px;" src="__ROOT__/Uploads/<?php echo  getonepicture($arr['goods_id']);?>"></td>
+        <td height="115"><a href="#"><?php echo getgoodsid($arr['goods_id']) ?></a></td>
+        <td height="115" class="aaaa<?php echo $arr['id']?>"><?php echo getgoodmoney($arr['goods_id'])?></td>
+        <td height="115">
+
+        <input name="button" onclick="nima(<?php echo $arr['id']?>)" type="image" id="button" value="提交" src="__PUBLIC__/imgaes/images/jisuan_03.jpg" class="left mm<?php echo $arr['id']?>">
+
+
+          <input type="text"  class="zhifu_t aa<?php echo $arr['id']?>" value="<?php echo $arr['num']?>"> 
+
+        <input name="button" onclick="nimai(<?php echo $arr['id']?>)"  type="image" class="left zz<?php echo $arr['id']?>"" id="button" value="提交" src="__PUBLIC__/imgaes/images/jisuan_05.jpg"></td>
+
+
+        <td height="115" class="aaa<?php echo $arr['id']?>"><?php echo getgoodmoney($arr['goods_id'])*$arr['num']?></td>
+        <td height="115">
+        <input class="kucun<?php echo $arr['id']?>" value="<?php echo getgoodstock($arr['goods_id'])?>" type="hidden">
+        <a href="{:U('Shop/shanchu',array('id'=>$arr['id']))}">删除</a></td>
+      </tr>
+
+      <?php endforeach;?>
+      <?php endif;?>
+      <tr style="line-height:0;">
+        <td width="10" height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+        <td height="10">&nbsp;</td>
+      </tr>
+      <tr bgcolor="#eaeaea">
+        <td width="10" height="44">&nbsp;</td>
+        <td height="44" colspan="3"><label style="padding:2px 5px 0 0; float:left;">
+        <!--
+          <input type="checkbox" name="checkbox" id="checkbox">
+          </label> -->
+          <!--
+          全选<a href="#" style="margin-left:20px; color:#000;">删除</a> --></td>
+        <td height="44"><strong style=" font-size:16px; color:#c51b52;"></strong></td>
+        <td height="44" colspan="3" align="right"><div class="jiesuan"><a href="{:U('Shop/jiesuan')}">结算</a></div><p class="right">合计（不含运费）：<strong class="mimai"><?php echo $num;?></strong>
+            <input type="hidden" class="kkl" value="<?php echo $num;?>">
+        </p>
+          </td>
+      </tr>
+    </table>
+  </div>
+</div>

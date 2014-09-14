@@ -1,0 +1,67 @@
+	.jScrollbar_mask { /* text container */
+		width:340px; padding-left:25px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar .jScrollbar_mask p { /* paragraphs */
+			margin:0;
+			padding:0;
+			color:#2B2B2B;
+			font-size:12px;
+		}
+	.jScrollbar_draggable { /* slider container */
+		float:left;
+		width:18px;
+		height:593px;
+		overflow:hidden;
+		position:relative;
+	}
+	.jScrollbar_draggable a.draggable { /** draggable **/
+		position:relative;
+		background-color:#000;
+		display:block;
+		height:70px;
+		width:16px;
+		cursor:s-resize
+	}
+.jScrollbar4 {
+	width:384px;
+	height:593px;
+	overflow:hidden;
+	position:relative;
+	background-color:#f6f2e9;
+}
+	.jScrollbar4 .jScrollbar_mask {
+		width:340px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar4 .jScrollbar_mask p {
+			margin:0;
+			padding:0;
+			color:#000;
+			font-size:12px;
+		}
+	.jScrollbar4 .jScrollbar_draggable {
+		float:left;
+		width:18px;
+		height:593px;
+		overflow:hidden;
+		background:none;
+		background: #b7a77f;
+		position:relative;
+		cursor:pointer;
+	}
+	.jScrollbar4 .jScrollbar_draggable a.draggable {
+		position:relative;
+		background:transparent url('../imgaes/about_qyjj_08.jpg') no-repeat;
+		display:block;
+		height:144px;
+		width:16px;
+		margin-left:0;
+		cursor:s-resize;
+		cursor:pointer;
+	}
+	

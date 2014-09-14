@@ -1,0 +1,175 @@
+<!--内容区域-->
+  <script language="javascript">
+  function del_sure(){
+
+    //alert("ds");
+
+    // return false;
+  var gnl=confirm("确定要删除订单吗?");
+  if (gnl==true){
+    return true;
+  }else{
+    return false;
+  }
+
+
+  }
+
+
+
+    function del_surel(){
+
+  
+	  var gnl=confirm("确定要退款吗?");
+	  if (gnl==true){
+	    return true;
+	  }else{
+	    return false;
+	  }
+
+   }
+
+
+   function thongzhi(aa,bb,cc){
+    var didan_id = aa;
+    var spay = bb;
+    var status =cc;
+
+    if(spay==0){
+
+      alert('亲请先付款');
+      return false;
+    }
+
+    if(status==0){
+
+      alert('商家还未发货');
+      return false;
+    }
+
+
+    if(spay==1 && status==1){
+
+      $.post('__URL__/ajaxedit',{'id':didan_id},function(date){
+          alert(date);
+
+          window.location.reload();
+
+
+      })
+    }
+
+   }
+
+
+
+  </script>
+
+<div class="help_content">
+	   
+        <include file="User:comment" />
+        <!--内容右边-->
+        <div class="help_con_right">
+            <div class="vip_top">我的订单</div>
+            <div class="order_info">
+
+        
+                <table  width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      
+                      <th >订单编号</th>
+                      <th>总价</th>
+                      <th>状态</th>
+                        <th>付款状态</th>
+                      <th>下单时间</th>
+                      <th>操作</th>
+
+                    </tr>
+                      <?php if(!empty($list)):?>
+                     <?php foreach($list as $val):?>  
+                     <tr border="1">
+                      <td  align="center" border="0" style="height:60px;">
+                        <?php echo $val['danhao']?>
+
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php echo remoney($val['id']) ?>元<br /><?php echo fukuan($val['pay'])?>
+                        
+                      </td >
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php wozifu($val['status'],$val['spay']) ?>
+                        
+                      </td align="center">
+
+                      <td align="center" border="0" style="height:60px;" >
+                        <?php if($val['spay']==0){echo '未付款';} if($val['spay']==1){echo '已付款';} if($val['spay']==2){echo '已退款';} if($val['spay']==3){echo '申请退款';}?>
+                        
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php echo date('Y-m-d',$val['created'])?><br /><?php echo date('H:i:s',$val['created'])?>
+                        
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <a href="{:U('User/delete',array('id'=>$val['id']))}" onclick="Javascript:return del_sure()">
+                                删除|
+                                </a>
+                                
+                                <?php
+                                   if($val['spay']==1){
+                                      
+                                    echo "<a onclick='Javascript:return del_surel()' href='".U('tui',array('id'=>$val['id']))."'>".申请退款."</a>"; 
+                                 
+
+
+                                   }else{
+
+                                       echo "<a href='".U('Shop/pay',array('cate_id'=>$val['id']))."'>".去付款."</a>";     
+
+                                   } 
+
+
+                                ?>
+
+                                <a  style="cursor:pointer; " did="<?php echo $val['id']?>" spay="<?php echo $val['spay']?>" onclick="thongzhi(cc=<?php echo $val['id']?>,dd=<?php echo $val['spay']?>,ee=<?php echo $val['status']?>)" >货到通知卖家</a>
+                        
+                      </td>
+                      
+                    </tr>
+
+                      <?php endforeach;?>
+                    <?php endif;?>
+
+
+                </table>
+
+
+                <div class="order_pages">
+
+               <div id="page">
+                 <?php echo $page;?>
+              </div>
+              <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

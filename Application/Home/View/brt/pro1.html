@@ -1,0 +1,182 @@
+
+
+<script>
+
+  
+
+    function dsads(){
+
+       $('.haha').addClass('whate');
+        $('.hahaa').removeClass('whate');
+
+        $('.ff').removeClass('aa');
+
+         $('.ll').addClass('aa');
+         $('.nh').addClass('aa');
+
+
+    }
+
+     function dsads1(){
+
+       $('.hahaa').addClass('whate');
+        $('.haha').removeClass('whate');
+         $('.ff').addClass('aa');
+
+         $('.ll').addClass('aa');
+         $('.nh').removeClass('aa');
+
+    }
+
+
+    function wol(){
+
+
+        //alert("sd");
+
+        $('.uu').removeClass('aa');
+    }
+
+
+    function woil(){
+        $('.bn').removeClass('aa');
+
+    }
+
+
+    //kiu
+
+      function woiil(){
+        $('.kiu').removeClass('aa');
+
+    }
+
+</script>
+
+<style>
+    .aa{
+
+        display:none;
+    }
+
+</style>
+<div class="effective_div">
+    <div class="gy_con_div">
+        <div class="gy_con_top">
+            <ul>
+                <li><a href="index.html">首页  》</a></li>
+                <li><a href="{:U('Brt/index')}">博润堂  》</a></li>
+                <li><a href="#">精品赏析</a></li>
+            </ul>
+        </div>
+        <!--内容区域显示-->
+        <div class="pro_content">
+
+        
+            
+            <div class="pro_con_ul">
+                <ul class="pro_con_li">
+                    <li><a class="haha"  onclick="dsads()" >和田玉</a></li>
+                  <li></li>
+                    <li><a class="hahaa"  onclick="dsads1()">南红</a></li>
+                </ul>
+            </div> 
+
+
+
+            <div id="main">
+
+
+
+                <ul class="tab_conbox  ll " >
+
+
+                <div id="leftpre"><img class="uu aa" src="__PUBLIC__/imgaes/pro_10.jpg" /></div>
+                <div class="pro_changes">
+                    <div class="pro_content1">
+                        <ul class="gocenter ul" >
+                           
+                           
+                           <?php if(!empty($list)): ?>
+                             <?php foreach($list as $val): ?>
+                            <li><img onmousemove="wol()" style="height:464px; width:847px;" src="__ROOT__/Uploads/<?php echo reurar($val['filename']) ;?>" /></li>
+                            <?php endforeach;?>
+                          <?php endif;?>
+
+
+                       
+                        </ul>
+                    </div>
+
+                 
+                </div>
+                <div id="rightpre"><img class="uu aa"  src="__PUBLIC__/imgaes/pro_13.jpg" /></div>
+
+                </ul>
+
+
+                <ul class="tab_conbox  ff aa" >
+
+                 <div id="leftpre1"><img class="bn aa" src="__PUBLIC__/imgaes/pro_10.jpg" /></div>
+
+                 <div class="pro_changes">
+                    <div class="pro_content2">
+                        <ul class="gocenter ul" >
+                           
+                           
+                           <?php if(!empty($lost)): ?>
+                             <?php foreach($lost as $val): ?>
+                            <li><img onmousemove="woil()"  style="height:464px; width:847px;" src="__ROOT__/Uploads/<?php echo reurar($val['filename']);?>" /></li>
+                            <?php endforeach;?>
+                          <?php endif;?>
+
+
+                       
+                        </ul>
+                    </div>
+
+                 
+                </div>
+
+
+
+                  <div id="rightpre1"><img class="bn aa" src="__PUBLIC__/imgaes/pro_13.jpg" /></div>
+
+                </ul>
+
+
+                 <ul  class="tab_conbox nh aa " >
+
+
+                <div id="leftpre2"><img class="kiu aa" src="__PUBLIC__/imgaes/pro_10.jpg" /></div>
+                <div class="pro_changes">
+                    <div class="pro_content3">
+                        <ul class="gocenter ul" >
+                             <?php if(!empty($hai)): ?>
+                             <?php foreach($hai as $val): ?>
+                           
+                            <li><img onmousemove="woiil()" style="height:464px; width:847px;" src="__ROOT__/Uploads/<?php echo reurar($val['filename']);?>" /></li>
+                            <?php endforeach;?>
+                          <?php endif;?>
+
+                        
+                        </ul>
+                    </div>
+
+                 
+                </div>
+                <div id="rightpre2"><img class="kiu aa" src="__PUBLIC__/imgaes/pro_13.jpg" /></div>
+
+                </ul>
+
+
+
+
+
+
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

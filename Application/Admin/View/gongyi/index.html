@@ -1,0 +1,111 @@
+  <script language="javascript">
+  function del_sure(){
+
+    //alert("ds");
+
+    // return false;
+  var gnl=confirm("确定要删除?");
+  if (gnl==true){
+    return true;
+  }else{
+    return false;
+  }
+
+
+  }
+  </script>
+        </script>
+        <div class="header">
+            
+            <h1 class="page-title">关注管理</h1>
+        </div>
+        
+        <ul class="breadcrumb">
+            <li><a href="#">首页</a> <span class="divider">/</span></li>
+            <li><a href="{:U('Mass/index')}">关注管理</a> <span class="divider">/</span></li>
+            <li class="active">关注列表</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                    
+              <div class="btn-toolbar row-fluid">
+             
+              </div>
+
+              <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>关注标题</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>修改时间</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php if(!empty($list)):?>
+                      <?php foreach($list as $arr):?>
+                      <tr>
+                        <td><?php echo $arr['name']?></td>
+                        <td><?php  zhan($arr['status'])   ?></td>
+                       
+                        <td><?php echo date('Y-m-d',$arr['created'])?></td>
+                        <td><?php echo date('Y-m-d',$arr['modified'])?></td>
+                        <td>
+
+
+                            <a href="{:U('Gongyi/delete',array('id'=>$arr['id']))}" onclick="Javascript:return  del_sure() "><i class="icon-remove"></i></a>
+                            <!--
+                            <a class="offset1" href="{:U('Didan/delete',array('id'=>$arr['id']))}" ><i class="icon-remove"></i></a> -->
+  
+                            
+                             <a href="{:U('Gongyi/view',array('id'=>$arr['id']))}"><i class="icon-tag"></i></a>
+                            
+                        </td>
+                      </tr>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                    </tbody>
+
+                  </table>
+              </div>
+              <div id="page">
+              <?php echo $page;?>
+              </div>
+              <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+              <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h3 id="myModalLabel">删除确认</h3>
+                  </div>
+                  <div class="modal-body">
+                      <p class="error-text"><i class="icon-warning-sign modal-icon"></i>您确定要删除该用户？</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+                      <button class="btn btn-danger" data-dismiss="modal">删除</button>
+                  </div>
+              </div>
+
+              <footer>
+                  <hr>
+                  <p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+              </footer>
+                    
+            </div>
+        </div>

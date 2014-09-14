@@ -1,0 +1,83 @@
+
+
+<style>
+    .kiu{
+    
+        background:#f7f7f7;
+    }
+
+
+</style>
+
+  <!--内容-->
+<div class="effective_div ">
+    <div class="gy_con_div kiu">      
+
+        <div class="gy_con_top">
+                <ul>
+                    <li><a href="{:U('index/index')}">首页  》</a></li>
+                    <li><a href="{:U('Brt/index')}">博润堂  》</a></li>
+                    <li><a href="#">新闻详情</a></li>
+                </ul>
+        </div>
+        <div class="gy_content">
+                    <!--内容区域左边-->
+                    <div class="gy_content_left">
+                        <!--内容区域左边头部-->
+                        <div class="gy_cont_left_top">
+                            <strong><?php echo $list['name']?></strong>
+                            <p><?php echo date('Y-m-d',$list['created'])?></p>
+                        </div>
+                        <div class="gy_cont_left_bot">
+
+                        <?php echo $list['content']?>  
+                
+                        </div>
+                    </div>
+                    <!--内容区域右边-->
+                    <div class="gy_cont_right">
+                        <!--内容区域右边顶部-->
+                        <div class="gy_cont_right_top">
+                            <p>新闻详情</p>
+                            <a href="#">更多</a>
+                        </div>
+                          <div class="gy_con_ul">
+                            <ul>
+                                
+                            <?php if(!empty($lost)):?>
+                                <?php foreach($lost as $val):?> 
+                                <li>
+                                    <dl class="gy_con_dl">
+                                        <dt><p><a href="{:U('Index/xianxi',array('id'=>$val['id']))}"><img style="height:109px;width:126px;" src="__ROOT__/Uploads/<?php echo newss($val['filename'])?>" /></a></p></dt>
+                                        <dd>
+                                            <h1 class="dd_h1_1"></h1>
+                                            <p>
+                                                <span><a style="color:#555" href="{:U('Index/xianxi',array('id'=>$val['id']))}"><?php echo $val['name']?></a></span>
+                                                <span class="span_time"><?php echo date('Y-m-d',$val['created'])?></span>
+                                            </p>
+                                            <h1 class="dd_h1_2"></h1>
+                                        </dd>
+                                    </dl>
+                                </li> 
+
+                                <?php endforeach;?>
+                            <?php endif;?> 
+
+
+                            
+                       
+                            
+                            </ul>
+                        </div>
+                        <!--翻页-->
+                        <div class="pages">
+                            <?php echo $page?>
+                        </div>
+                    </div>
+                    <!--返回顶部-->
+                    <div class="returntop">
+                        返回顶部<img onclick="pageScroll()" src="__PUBLIC__/imgaes/about_gysy_19.jpg" />
+                    </div>
+                </div>
+    </div>
+</div>

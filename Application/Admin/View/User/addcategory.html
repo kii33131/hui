@@ -1,0 +1,40 @@
+	<div class="header">
+		<h1 class="page-title">管理员管理</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('User/index')}">管理员管理</a> <span class="divider">/</span></li>
+	    <li class="active">查看管理员</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				
+					<fieldset>
+						<legend>管理员详情</legend>
+						<label>用户名</label>
+						<input type="text" readonly name="name" value="<?php  echo $list[0]['name']?>" class="input-xlarge" >
+
+						<label>电话</label>
+						<input type="text" readonly name="phone" value="<?php echo $list[0]['phone']?>" class="input-xlarge" placeholder="">
+
+						<label>修改时间</label>
+						<input readonly type="text" name="phone" value="<?php echo date('Y-m-d',$list[0]['modified'])?>" class="input-xlarge" placeholder="">
+
+						
+				
+					</fieldset>
+
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

@@ -1,0 +1,78 @@
+		<title>KindEditor PHP</title>
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+
+		<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '__PUBLIC__/php/upload_json.php',
+				fileManagerJson : '__PUBLIC__/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+
+	<div class="header">
+		<h1 class="page-title">帮助中心</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{'help/index'}">帮助管理</a> <span class="divider">/</span></li>
+	    <li class="active">修改帮助</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form id="tab" action="{:U('Help/edit')}" method="post" enctype="multipart/form-data">
+					<fieldset>
+						<legend>帮助中心-修改内容</legend>
+						<h2>板块</h2>
+
+						<input type="text" name="status" value="<?php getmodel($list['status'])?>" readonly />
+
+						<input type="hidden" name="id" value="<?php echo $list['id']?>" readonly />
+			
+						<h2>实际内容</h2>
+
+						 
+						<textarea  style="width:700px;height:200px;visibility:hidden;"  name="content"><?php echo $list['content']?></textarea>
+
+					
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 编 辑 </button>
+
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

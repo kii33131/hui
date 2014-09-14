@@ -1,0 +1,87 @@
+		<title>KindEditor PHP</title>
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+
+		<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '__PUBLIC__/php/upload_json.php',
+				fileManagerJson : '__PUBLIC__/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+
+	<div class="header">
+		<h1 class="page-title">帮助中心</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('help/index')}">帮助管理</a> <span class="divider">/</span></li>
+	    <li class="active">添加帮助</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form id="tab" action="{:U('Help/add')}" method="post" enctype="multipart/form-data">
+					<fieldset>
+						<legend>帮助中心-添加内容</legend>
+						<h2>板块</h2>
+						<input type="radio" value="1" id="male" name="status" ><label for="male">博润堂历程</label>
+						<input type="radio" value="13" id="malef" name="status" ><label for="malef">博润堂展厅</label>
+						<input type="radio" value="2" id="male1" name="status" ><label for="male1">博润堂介绍</label>
+						<input type="radio" value="3" id="male2" name="status" ><label for="male2">法律顾问</label>
+						<input type="radio" value="4" id="male3" name="status" ><label for="male3">品质保证</label>
+						<input type="radio" value="5" id="male4" name="status" ><label for="male4">免费服务及赠送</label>
+						<input type="radio" value="6" id="male5" name="status" ><label for="male5">售后服务保证</label>
+						<input type="radio" value="7" id="male6" name="status" ><label for="male6">退换货流程</label>
+						<input type="radio" value="8" id="male7" name="status" ><label for="male7">配送流程</label>
+						<input type="radio" value="9" id="male8" name="status" ><label for="male8">网上转账</label>
+						<input type="radio" value="10" id="male9" name="status" ><label for="male9">支付方式</label>
+						<input type="radio" value="11" id="male10" name="status" ><label for="male10">购物流程</label>
+						<input type="radio" value="12" id="male11" name="status" ><label for="male11">账号注册</label>
+					
+						<h2>实际内容</h2>
+
+						 
+						<textarea  style="width:700px;height:200px;visibility:hidden;"  name="content"></textarea>
+
+					
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

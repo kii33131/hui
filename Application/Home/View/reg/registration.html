@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册页面</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+</head>
+
+<body style="background:#fff;">
+	<!--顶部设置-->
+	<div class="registration_top">
+    	<div class="registration">
+        	<div class="registration_top_left"><img src="__PUBLIC__/images/trip_01.jpg" /></div>
+            <div class="registration_top_right">
+                <p>在线注册</p>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="registration">
+        
+    	<div class="left_table">
+        <form action="{:U('Reg/regs')}" method="post">
+        	<table width="641">
+              <tr>
+                <td width="126">
+                	<span>您的Email地址</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="email" type="text" class="registration_text" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>用户名</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="name" type="text" class="registration_text" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>名号</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="surname" type="text" class="registration_text" /></td>
+                <td class="td">（填实名可方便亲密好友认证）</td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>设置密码</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="password" type="password" class="registration_text" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>确认密码</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="repassword" type="password" class="registration_text" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>所在城市</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="city" type="text" class="registration_text" /></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td width="126">
+                	<span>验证码</span>
+                	<span><img src="__PUBLIC__/images/registration_06.jpg" width="6" class="img" /><span>
+                </td>
+                <td width="245"><input name="yzm" type="text" class="registration_text" /></td>
+                <td>
+                    <p class="verify"><img src="__APP__/home/Verify/code" id="codeClick" onClick="this.src=this.src+'?'+Math.random()"></p>
+                    <p class="change">换一张</p>
+                </td>
+              </tr>
+            </table>
+			<div class="submit">
+            	<p><input type="submit" value="注册"></p>
+                <a href="#">《逍遥游旅游网会员服务条款》</a>
+            </div>
+            </form>
+
+
+
+
+        </div>
+
+       
+        <div class="registration_left">
+        	<dl class="login_1">
+            	<dt>已有逍遥游账号？</dt>
+                <dd><a href="#"><img src="__PUBLIC__/images/registration_03.jpg" /></a></dd>
+            </dl>
+            <div class="clear"></div>
+            <dl class="login_2">
+            	<dt>使用合作网账号登录</dt>
+                <dd><a href="#"><img src="__PUBLIC__/images/login_07.jpg" />QQ</a></dd>
+                <dd><a href="#"><img src="__PUBLIC__/images/trip_88.jpg" />腾讯微博</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/login_09.jpg" />百度</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/trip_82.jpg" />新浪微博</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/trip_90.jpg" />开心网</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!--/*最底部*/-->
+    <div class="public_bottom">	
+    	<div class="public_div">
+            <div class="public_bottom_center">
+                <ul>
+                    <li>地址：上海北京东路433号2007座（南京东路步行街旁）备案编号： 沪ICP备12024896号-1</li>
+                    <li>逍遥游 © 2013 Gotoway.COM</li>
+                </ul>
+            </div>
+            <div class="public_bottom_right">
+                <dl>
+                    <dt>分享：</dt>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_82.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_84.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_86.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_88.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_90.jpg" /></a></dd>
+                </dl>
+            </div>
+        </div>
+      
+
+    </div>  
+
+	</div>
+</body>
+</html>

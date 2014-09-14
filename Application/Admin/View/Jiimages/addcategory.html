@@ -1,0 +1,71 @@
+	<title>KindEditor PHP</title>
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+
+		<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '../php/upload_json.php',
+				fileManagerJson : '../php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Jiimages/index')}">资质管理</a> <span class="divider">/</span></li>
+	    <li class="active">资质添加</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form name="example" id="tab" action="{:U('Jiimages/add')}" method="post" enctype="multipart/form-data">
+					<fieldset>
+						<legend>资质添加</legend>
+						
+						
+						
+						<h2>资质图片</h2>
+						<input type="file" name="photo" />
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

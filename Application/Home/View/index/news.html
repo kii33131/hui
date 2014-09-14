@@ -1,0 +1,94 @@
+<style>
+	.kiu{
+	
+		background:#f7f7f7;
+	}
+
+
+</style>
+<!--内容-->
+<div class="effective_div">
+	<div class="gy_con_div new_con_div kiu">
+    	<div class="gy_con_top">
+        	<ul>
+            	<li><a href="{:U('index/index')}">首页  》</a></li>
+            	<li><a href="{:U('Index/news')}">博润堂  》</a></li>
+            	<li><a href="#"><?php echo $names;?></a></li>
+            </ul>
+        </div>
+        <!--内容区域显示-->
+        <div class="news_content">
+        	<!--左边内容-->
+        	<div class="news_con_left">
+            	<div class="new_con_left_top">
+                	<p class="new_con_left_top_p1">媒体关注</p>
+                    
+                </div>
+                <div class="new_con_left_bot">
+                	<ul class="news_left_ul">
+
+                     <?php if(!empty($lisit)):?>
+                        <?php foreach($lisit as $val):?>
+                    	<li>
+                        	<div class="news_rel">
+                            	<a href="{:U('Index/gggs',array('id'=>$val['id']))}" id="div1"><img style="height:128px;width:268px;" src="__ROOT__/Uploads/<?php echo meidi($val['filename'])?>" /></a>
+                                <div class="news_abs1" >
+                                	<div class="news_abs2"></div>
+                                    <div class="news_abs_title"><a style="color:#FFF" href="{:U('Index/gggs',array('id'=>$val['id']))}"><?php echo $val['name']?></a></div>
+                                </div>
+                           </div>
+                        </li>
+                     <?php endforeach;?>
+                    <?php endif;?>
+                    </ul>
+                </div>
+            </div>
+        	<!--中间内容-->
+            <div class="news_con_left new_con_cen">
+            	<div class="new_con_left_top">
+                	<p class="new_con_left_top_p1">企业新闻</p>
+                    <a href="#">更多</a>
+                </div>
+                <div class="new_con_left_bot">
+                	<ul class="news_cen_ul">
+                    <?php if(!empty($list)):?>
+                        <?php foreach($list as $val):?>
+                    	<li>
+                        	<dl class="news_cen_dl">
+                            
+                            	<dt><a href="{:U('Index/xianxi',array('id'=>$val['id']))}"><img style="height:109px;width:126px;" src="__ROOT__/Uploads/<?php echo newss($val['filename']) ?>" /></a></dt>
+                                <dd>
+                                	<h1 class="news_h1_1"></h1>
+                                    <p> <a style="color:#000" href="{:U('Index/xianxi',array('id'=>$val['id']))}"><?php echo $val['name']?> </a></p>
+                                    <h1 class="news_h1_2"></h1>
+                                </dd>
+                            </dl>
+                            <div class="new_li_div"><p>新闻采访</p></div>
+                        </li>
+                    <?php endforeach;?>
+                    	<?php endif;?>
+                    </ul>
+                </div>
+            </div>
+            <!--右边内容-->
+            <div class="news_con_right">
+            	<div class="news_con_right_top">
+                	<p>藏品推荐</p>
+                    <a href="{:U('index/index')}">更多</a>
+                </div>
+
+               
+                <?php if(!empty($kk)):?>
+                <?php  foreach($kk as $zz):?>
+                    <a  href="{:U('index/xgoods',array('id'=>$zz['id']))}" class="sto_a1">
+                <div class="news_right_img"><img style="height:452px;width:452px;"  src="__ROOT__/Uploads/<?php echo  getonepicture($zz['id']);?>" />
+                
+                </div></a>
+                <?php endforeach;?>
+                <?php endif;?>
+
+                
+            </div>
+        </div>
+    </div>
+</div>

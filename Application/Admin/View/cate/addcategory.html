@@ -1,0 +1,52 @@
+	<script type="text/javascript">
+		$(function(){
+		    //$(".registerform").Validform();  //就这一行代码！;
+		        
+		    $(".tab").Validform({
+		        tiptype:2
+		    });
+		})
+     </script>
+
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Cate/index')}">分类管理</a> <span class="divider">/</span></li>
+	    <li class="active">分类添加</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form class="tab" action="{:U('cate/add')}" method="post">
+					<fieldset>
+						<legend>分类添加</legend>
+						<label>pid</label>
+						<input type="text" name="pid"  readonly  value="<?php echo $pid ;?>" class="input-xlarge" >
+
+						<label>分类名</label>
+						<input type="text" datatype="*" name="title" value=""  class="input-xlarge" placeholder="请输入分类名..." errormsg="分类名必填"/><span></span>
+
+				
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">博润堂</a></p>
+		</footer>
+	</div>

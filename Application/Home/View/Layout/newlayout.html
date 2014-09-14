@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link rel="shortcut icon" href="__PUBLIC__/imgaes/logo.ico" type="image/x-icon" />
+
+<!--
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script> -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.0.min.js"></script>
+
+
+<script type="text/javascript" src="__PUBLIC__/js/style.js"></script> 
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+</head>
+
+<body>
+<div  >
+<!--头部-->
+<div class="header">
+    <a href="{:U('Index/index')}">
+        <div class="header_left">
+
+          <img src="__PUBLIC__/imgaes/logo.png" />
+
+        </div>
+
+    </a>
+    <div class="daohang">
+        <ul class="daohang_ul">
+            <li>
+                <a href="{:U('Brt/index')}" class="daohang_a">博润堂 </a>
+
+                <dl class="daohang_dl">
+                    <dd><a href="{:U('Brt/qyjj')}">企业简介</a></dd>
+                    <dd><a href="{:U('Brt/yjry')}">业界荣誉</a></dd>
+                    <dd><a href="{:U('Brt/spxs')}">视频欣赏</a></dd>
+                   
+                    <dd class="dl_last_a"><a href="{:U('Brt/mass')}">公益事业</a></dd> 
+                </dl>
+               
+            </li>
+
+             <li>
+                <a href="{:U('Index/index')}" class="daohang_a">官方商城 </a>
+
+
+               
+            </li>
+
+            <li>
+                <a href="{:U('Brt/qpsx')}" class="daohang_a">精品赏析</a>
+
+                <!--
+                <dl class="daohang_dl">
+                    <dd><a href="#">企业简介</a></dd>
+                    <dd><a href="#">业界荣誉</a></dd>
+                    <dd><a href="#">视频欣赏</a></dd>
+                    <dd class="dl_last_a"><a href="#">公益事业</a></dd>
+                </dl> -->
+            </li>
+            <li>
+                <a href="{:U('Brt/news')}" class="daohang_a">最新资讯 </a>
+                        <!-- daohang_dlio-->
+                    <dl class="daohang_dl daohang_dlio ">
+                    <dd><a href="{:U('Brt/news',array('zhuan'=>1))}">企业新闻</a></dd>
+                    
+                    <dd><a href="{:U('Brt/news',array('zhuan'=>3))}">媒体关注</a></dd>
+                    <dd style="border:none;"><a  href="{:U('Brt/news',array('zhuan'=>2))}">藏品推荐</a></dd>
+                   
+               
+                </dl>
+                
+            </li>
+           
+            <li>
+                <a href="{:U('Cont/index')}" class="daohang_a">联系我们 </a>
+
+                <style>
+                    
+                   
+
+                        .daohang_dlio{
+                    position:absolute; top:25px; left:0; min-width:237px; height:24px;background:#97824b; border-top:1px solid #fff;
+
+                }
+                
+                .daohang_dlio dd a {
+                    color: #FFFFFF;
+                    display: block;
+                    float: left;
+                    font-size: 15px;
+                    height: 17px;
+                    line-height: 17px;
+                    text-align: center;
+                    width: 78px;
+                }
+
+
+                .daohang_dli{
+
+                  
+
+
+                 position:absolute; top:25px; left:0; min-width:157px; height:24px;background:#97824b; border-top:1px solid #fff;
+
+                }
+                
+                
+                .daohang_dli dd a {
+                    color: #FFFFFF;
+                    display: block;
+                    float: left;
+                    font-size: 15px;
+                    height: 17px;
+                    line-height: 17px;
+                    text-align: center;
+                    width: 78px;
+                }
+                </style>
+
+                <!--daohang_dli-->
+
+                <dl class="daohang_dl daohang_dli " />
+                    <dd><a href="{:U('Brt/zxns')}">诚聘英才</a></dd>
+                    <dd style="border:none;"><a href="{:U('Cont/index')}">公司地址</a></dd>
+                    
+                </dl>
+
+            
+            </li>
+
+             <li>
+                <a href="{:U('Zshou/index')}" class="daohang_a">证书查询 </a>
+
+                
+            </li>
+         
+        </ul>
+    </div>
+
+    <script>
+
+
+
+
+
+    function shubu(){
+
+         $('#cao').attr('src','__PUBLIC__/imgaes/hah1.jpg');
+
+    }
+
+    function shubu2(){
+
+         $('#cao').attr('src','__PUBLIC__/imgaes/index_06.jpg');
+
+    }
+
+
+
+       function shubu3(){
+
+         $('#cao3').attr('src','__PUBLIC__/imgaes/hah3.jpg');
+
+    }
+
+
+    function shubu4(){
+
+         $('#cao3').attr('src','__PUBLIC__/imgaes/index_08.jpg');
+
+    }
+
+
+
+   function shubu5(){
+
+         $('#cao4').attr('src','__PUBLIC__/imgaes/hah2.jpg');
+         $('.wocaonii').addClass("lli");
+
+    }
+
+
+    function shubu6(){
+
+         $('#cao4').attr('src','__PUBLIC__/imgaes/index_12.jpg');
+         $('.wocaonii').removeClass("lli");
+    }
+
+
+    </script>
+    <style>
+        .wocaonii{
+
+            position: absolute;
+            width:100px;
+            height:100px;
+            
+            display: none;              
+                          
+                        
+             } 
+                   
+         .lli{
+
+            display: block;
+            }
+
+     </style>
+
+
+    <div class="header_right">
+        <div class="header_right_top">
+            <ul>
+                <!--  -->
+                <li><a target="_blank" href="http://boruntang.taobao.com/"><img id="cao" onmousemove="shubu()" src="__PUBLIC__/imgaes/index_06.jpg" onmouseout="shubu2()" /></a></li>
+                <li><a target="_blank" href="http://weibo.com/boruntang/profile?rightmod=1&wvr=5&mod=personinfo"><img  id="cao3" onmousemove="shubu3()"  onmouseout="shubu4()"  src="__PUBLIC__/imgaes/index_08.jpg" /></a></li>
+                <!--
+                <li><a href="#"><img src="__PUBLIC__/imgaes/index_10.jpg" /></a></li>-->
+                <li class="hea_right_lastli"><a href="#"><img id="cao4" onmousemove="shubu5()"  onmouseout="shubu6()" src="__PUBLIC__/imgaes/index_12.jpg" /></a></li>
+
+
+            <div class="wocaonii">
+                               
+              <img  src="__PUBLIC__/imgaes/rccc.jpg"  style="width:100px;height:100px;">
+                      
+            </div>
+            </ul>
+        </div>
+
+  
+
+             
+               
+
+        <div class="header_right_bot">
+        <form action="{:U('Index/getgoods')}" method="get">
+            <div class="text_div">
+                <input name="name" type="text" class="text" placeholder="输入商品名称">
+                <input name="" type="image" class="image" src="__PUBLIC__/imgaes/index_19.jpg" />
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+{__CONTENT__}
+<!--底部-->
+<div class="bottom">
+    <p>版权所有 © 博润堂 www.boruntang.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国统一销售热线：400 082 1688 </p>
+</div>
+</body>
+</html>
+

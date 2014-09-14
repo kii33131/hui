@@ -1,0 +1,68 @@
+
+		<script type="text/javascript">
+		$(function(){
+		    //$(".registerform1").Validform();  //就这一行代码！;
+		        
+		    $(".registerform1").Validform({
+		        tiptype:2
+		    });
+		})
+      </script>
+	<div class="header">
+		<h1 class="page-title">证书添加</h1>
+	</div>
+
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Zhens/index')}">证书管理</a> <span class="divider">/</span></li>
+	    <li class="active">证书添加</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">    
+			<div class="well">
+				<form class="registerform1"  action="{:U('Zhens/add')}" method="post"  >
+					<fieldset>
+					
+						<legend>证书添加</legend>
+
+						<label>作品名称</label>
+						<input type="text"  name="name" datatype="*" value=""  placeholder="请输入作品名称"  class="input-xlarge" >
+
+						<label>证书编号</label>
+						<input type="text"  name="bianhao" datatype="*" value=""  placeholder="请输入证书编号"  class="input-xlarge" >
+
+						<label>原材料</label>
+						<input type="text"  name="cailiao" datatype="*" value=""  placeholder="请输入原材料"  class="input-xlarge" >
+
+
+					
+
+
+  						<label>作品尺寸</label>
+						<input type="text"  name="chicun" datatype="*" value=""  placeholder="输入格式 长*宽*高"  class="input-xlarge" >
+
+
+						<label>作品重量</label>
+						<input type="text"  name="weight" datatype="*" value=""  placeholder="输入作品重量"  class="input-xlarge" >
+
+						<label>创作时间</label>
+						<input type="text"  name="time" datatype="*" value=""  placeholder="输入格式 年-月-日"  class="input-xlarge" >
+
+
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

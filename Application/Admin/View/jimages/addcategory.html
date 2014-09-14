@@ -1,0 +1,73 @@
+	<title>KindEditor PHP</title>
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+
+		<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '../php/upload_json.php',
+				fileManagerJson : '../php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Jimages/index')}">精品管理</a> <span class="divider">/</span></li>
+	    <li class="active">精品添加</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form name="example" id="tab" action="{:U('Jimages/add')}" method="post" enctype="multipart/form-data">
+					<fieldset>
+						<legend>精品添加</legend>
+						<h2>分类</h2>
+						<input type="radio" checked  name="status" value="0"><span>全部</span>
+						<input type="radio" name="status" value="1"><span>和田玉</span>
+						<input type="radio" name="status" value="2"><span>南红</span>
+						
+						<h2>精品图片</h2>
+						<input type="file" name="photo" />
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

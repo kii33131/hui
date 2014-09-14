@@ -1,0 +1,94 @@
+
+<!--内容-->
+<div class="effective_div">
+	<div class="gy_con_div qy_con_div">
+        <!--内容区域顶部-->
+      <div class="cer_con_top">
+        	<div class="cer_con_top_left"><img src="__PUBLIC__/imgaes/Certificate_03.jpg" /></div>
+          <div class="cer_con_top_right">
+              <div class="cer_con_topbg">
+                  <form class="jjo" action="{:U('Zshou/index')}" method="get">
+                    <strong>证书编号查询</strong>
+                    <p class="wooo">
+                        <label class="">输入编号</label>
+                       <input  type="text" class="span1_text" name="bianhao" value="<?php echo $list['bianhao']?>" />
+                    </p>
+                    <p class="image_int"><input class="" name="" type="image" src="__PUBLIC__/imgaes/Certificate.png" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--内容区域底部-->
+        <div class="cer_con_bot">
+
+   <style>
+        .wooo{ overflow:hidden; width:300px; height:40px;  margin-left:53px; line-height: 40px; }
+         .jjo label{ float:left; width:73px; height:40px;font-family:"宋体"; font-size:18px; line-height:36px; border: solid 1px #F00}
+         .span1_text{  float:left; width:170px; height:31px;border-radius:3px; border:1px solid #999; margin-left:10px;  color:#333333; font-family:"宋体"; font-size:14px;}
+
+
+
+        </style>
+
+   		  <div class="cer_bot_top">
+       		<p class="cer_bot_title">为您查询到的藏品为：</p>
+               
+
+               	  
+                  <?php $date=getalllpicture($list['id']) ;?>
+             
+                    <?php if(!empty($date)):?>
+                    <?php foreach($date as $val):?>
+
+
+                        <div class="woyi">
+                       
+                         <img style="height:392px;width:648px;" src="__ROOT__/Uploads/<?php echo $val['filename']?>" />
+
+                      </div>
+                  
+                    <?php endforeach;?>
+                    <?php endif ;?>
+                
+                
+       	  </div>
+
+            <div class="cer_bot_bot">
+           	  <table width="597">
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品名</h5></td>
+                    <td><p><?php echo $list['name']?></p></td>
+                  </tr>
+
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品编号</h5></td>
+                    <td><p><?php echo $list['bianhao']?></p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品材质</h5></td>
+                    <td><p><?php echo $list['cailiao']?></p></td>
+                  </tr>
+
+                   <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品尺寸</h5></td>
+                    <td><p><?php echo $list['chicun']?>mm</p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>商品重量</h5></td>
+                    <td><p><?php echo $list['weight']?>克</p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>创作时间</h5></td>
+                    <td><p><?php echo $list['time']?></p></td>
+                  </tr>
+             
+
+              
+               
+              </table>
+          </div>
+
+
+        </div>
+    </div>
+</div>

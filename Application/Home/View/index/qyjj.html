@@ -1,0 +1,219 @@
+<style>
+    .kiiu{
+    
+        background:#f7f7f7;
+    }
+
+
+</style>
+<script type="text/javascript">
+$(function(){
+    var Bool=false;
+    var Scro=$("#scroll");
+    var Scrp=$("#p");
+    var Scrobd=$("#bd");
+    var Scroul=$("#ul");
+    var Scrp_Height =Scrp.outerHeight()/2;
+    var Num2=Scro.outerHeight()-Scrp.outerHeight();
+    var offsetX=0;
+    var offsetY=0;
+    Scrp.mousedown(function(e){  
+        Bool=true;
+    });
+    $(document).mouseup(function(){
+        Bool=false;
+    });
+    $(document).mousemove(function(e){
+        if(Bool){
+            var Num1= e.clientY - Scro.position().top;
+            var y=Num1 - Scrp_Height;
+            if(y<=1){
+                Scrll(0);
+                Scrp.css("top",1);
+            }else if(y>=Num2){
+                Scrp.css("top",Num2);
+                Scrll(Num2);
+            }else{
+                Scrll(y);
+            }
+        }
+    });
+    function Scrll(y){
+        Scrp.css("top",y);
+        Scroul.css("margin-top",-(y/(Scro.outerHeight()-Scrp.outerHeight()))*(Scroul.outerHeight()-Scrobd.height()));
+    }
+    if(document.getElementById("scroll_bd").addEventListener) 
+    document.getElementById("scroll_bd").addEventListener('DOMMouseScroll',wheel,true);
+    document.getElementById("scroll_bd").onmousewheel=wheel;
+    var Distance=Num2*0.1;
+    function wheel(e){
+        var evt = e || window.event;
+        var wheelDelta = evt.wheelDelta || evt.detail;
+        if(wheelDelta == -120 || wheelDelta == 3){
+            var Distances=Scrp.position().top+Distance;
+            if(Distances>=Num2){
+                Scrp.css("top",Num2);
+                Scrll(Num2);
+            }else{
+                Scrll(Distances);
+            }
+            return false;
+        }else if (wheelDelta == 120 || wheelDelta == -3){
+            var Distances=Scrp.position().top-Distance;
+            if(Distances<=1){
+                Scrll(0);
+                Scrp.css("top",1);
+            }else{
+                Scrll(Distances);
+            }
+            return false;
+        }   
+    }
+});
+</script>
+<!--内容-->
+<div class="effective_div">
+	<div class="gy_con_div qy_con_div kiiu">
+    	<div class="gy_con_top">
+        	<ul>
+            	<li><a href="index.html">首页  》</a></li>
+            	<li><a href="{:U('Brt/index')}">博润堂  》</a></li>
+            	<li><a href="">企业简介</a></li>
+            </ul>
+        </div>
+        <!--内容区域显示-->
+        <div class="qy_con_show">
+        	<!--内容头部-->
+            <div class="qy_con_top"><img src="__PUBLIC__/imgaes/about_qyjj_03.jpg" /></div>
+            <!--内容底部-->
+            <div class="qy_con_bot">
+            	<!--底部左边-->
+            	<div class="qycon_bot_left">
+                	<dl class="qycon_bot_dl">
+                    	<dt><img src="__PUBLIC__/imgaes/about_qyjj_06.jpg" /></dt>
+                        <dd>
+                        	<strong>黄杨洪</strong>
+                            <p>
+                            	中国海派玉雕大师<br />
+                                中国青年玉雕艺术家<br />
+                                上海玉雕大师<br />
+                                上海海派文化协会理事<br />
+                                1973年生于重庆<br />
+                                1995年开始从事玉雕，师承上海玉雕厂程广彦<br />
+                                2008年成立个人玉雕工作室——博润堂
+                            </p>
+                        </dd>
+                    </dl>
+                    <div class="qycon_bot_bot">
+                    	<p>1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。</p>
+                        <p>
+                        	他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通过适度夸张来营造视觉冲击感。细节上追求线条的流畅、灵动；块面处理干净利落，繁简相宜，且注重线条和块面的完美融汇，亦善用俏色为作品点睛。
+他的工艺继承传统又不乏突破，在充分尊重原石天然特征的基础上，灵活运用薄意雕、深浮雕、圆雕、镂雕等各种技法，丰富作品层次，营造深邃的透视空间和艺术意境。
+                        </p>
+                        <p>
+                        	他的作品，俏丽新颖，有着［素］、［雅］、［静］的唯美气韵，既发扬了海派玉雕的传统精髓，又符合当代审美志趣的走向，在业内备受青睐。
+                        </p>
+                    </div>
+                </div>
+            	<!--底部右边-->
+
+
+
+                <div class="bd" id="scroll_bd">
+
+                 <iframe style="border:0px solid #b6a77e;"  src="{:U('Index/jiangxiang')}" width="386px" height="590px" scrolling="none"></iframe>
+
+                    <!--
+                    <div class="top" id="bd">
+                       <div class="top_gundong">艺术年表</div>
+                        <ul>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2009年</dt>
+                                    <dd>
+                                        《五福捧寿》印章获「百花奖」金奖<br />
+                                        《花好月圆》《一鼓作气》获「百花奖」银奖
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2010年</dt>
+                                    <dd>
+                                        《虎》获「英和杯神工奖」金奖<br />
+                                        《弥陀》《路路通》获「神工奖」银奖<br />
+                                        《硕果累累》获「百花奖」最佳创意奖<br />
+                                        《连年有余》获「百花奖」银奖<br />
+                                        《喜上眉梢》《王者归来》获「良渚杯」金奖<br />
+                                        《耄耋》获「良渚杯」最具文化创意奖<br />
+                                        《胜者为王》获「天工奖」铜奖<br />
+                                        《少师太师》获「天工奖」优秀作品奖
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2010年</dt>
+                                    <dd>
+                                        《锦上添花》获「玉龙奖」金奖<br />
+                                        《花开富贵》获「玉龙奖」银奖<br />
+                                        《连年有余》获「玉龙奖」银奖<br />
+                                        《官上加官》获「百花奖」银奖<br />
+                                        《天瑞》获「神工奖」金奖<br />
+                                        《一路连科》获「神工奖」银奖<br />
+                                        《年年有余》获「陆子冈杯」金奖
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2010年</dt>
+                                    <dd>
+                                        《竹里馆》获「玉龙奖」金奖<br />
+                                        《锦上添花》获「神工奖」特别金奖<br />
+                                        《守卫》获「神工奖」金奖<br />
+                                        《龟鹤延年》获「天工奖」银奖
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2010年</dt>
+                                    <dd>
+                                        《竹里馆》获「玉龙奖」金奖<br />
+                                        《锦上添花》获「神工奖」特别金奖<br />
+                                        《守卫》获「神工奖」金奖<br />
+                                        《龟鹤延年》获「天工奖」银奖
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="abs_dl">
+                                    <dt>2010年</dt>
+                                    <dd>
+                                        《竹里馆》获「玉龙奖」金奖<br />
+                                        《锦上添花》获「神工奖」特别金奖<br />
+                                        《守卫》获「神工奖」金奖<br />
+                                        《龟鹤延年》获「天工奖」银奖
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        
+                    </div> 
+                    
+                    <div class="scroll" id="scroll">
+                        <p id="p"></p>
+                    </div>-->
+                    
+                        
+                </div>
+
+
+
+            </div>
+            
+        </div>
+       
+    </div>
+</div>

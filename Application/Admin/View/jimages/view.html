@@ -1,0 +1,42 @@
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{'New/index'}">新闻管理</a> <span class="divider">/</span></li>
+	    <li class="active">新闻查看</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+					<fieldset>
+						<legend>新闻添加</legend>
+						<h2>新闻名</h2>
+						<input type="text" readonly  name="name" value="<?php echo $list['name']?>" class="input-xlarge" >
+						<h2>新闻图片</h2>
+						<img style="height:109px;width:129px;" src="http://boruntang.gotoip3.com/Uploads/<?php echo $list['filename']?>" />
+
+						<h2>新闻内容</h2>
+
+						 
+						<textarea readonly   rows="13" cols="40"   name="content"><?php echo $list['content']?></textarea>
+
+				
+							
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

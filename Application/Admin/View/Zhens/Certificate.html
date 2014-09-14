@@ -1,0 +1,79 @@
+
+<!--内容-->
+<div class="effective_div">
+	<div class="gy_con_div qy_con_div">
+        <!--内容区域顶部-->
+      <div class="cer_con_top">
+        	<div class="cer_con_top_left"><img src="__PUBLIC__/imgaes/Certificate_03.jpg" /></div>
+        <div class="cer_con_top_right">
+            	<div class="cer_con_topbg">
+               <form action="{:U('Zshou/index')}" method="get">
+                	<strong>证书编号查询</strong>
+                    <p>
+                    	<span class="span1">输入编号</span>
+                        <span class="span2"><input  type="text" class="span1_text" name="bianhao" value="<?php echo $list['bianhao']?>" /></span>
+                    </p>
+                    <p class="image_int"><input name="" type="image" src="__PUBLIC__/imgaes/Certificate.png" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--内容区域底部-->
+        <div class="cer_con_bot">
+
+   		  <div class="cer_bot_top">
+       		<p class="cer_bot_title">为您查询到的藏品为：</p>
+                <ul class="cer_bot_ul">
+
+               	  
+                  <?php $date=getalllpicture($list['id']) ;?>
+             
+                    <?php if(!empty($date)):?>
+                    <?php foreach($date as $val):?>
+
+
+
+                       <li><h1>
+            
+                         <img style="height:217px;width:253px;" src="__ROOT__/Uploads/<?php echo $val['filename']?>" />
+
+                       </h1></li>
+                  
+                    <?php endforeach;?>
+                    <?php endif ;?>
+                
+                </ul>
+       	  </div>
+
+            <div class="cer_bot_bot">
+           	  <table width="597">
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品名</h5></td>
+                    <td><p><?php echo $list['name']?></p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>原材料</h5></td>
+                    <td><p><?php echo $list['cailiao']?></p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>商品重量</h5></td>
+                    <td><p><?php echo $list['weight']?>克</p></td>
+                  </tr>
+                  <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>创作时间</h5></td>
+                    <td><p><?php echo $list['time']?></p></td>
+                  </tr>
+             
+
+               <tr>
+                    <td width="90" bgcolor="#eeeeee"><h5>作品尺寸</h5></td>
+                    <td><p><?php echo $list['chicun']?>mm</p></td>
+                  </tr>
+               
+              </table>
+          </div>
+
+
+        </div>
+    </div>
+</div>

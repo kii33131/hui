@@ -1,0 +1,43 @@
+	<div class="header">
+		<h1 class="page-title">管理员管理</h1>
+	</div>
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('User/index')}">管理员管理</a> <span class="divider">/</span></li>
+	    <li class="active">编辑管理员</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+
+				<form action="{:U('User/edit')}" method="post">
+					<fieldset>
+						<legend>管理员详情</legend>
+						<label>用户名</label>
+						<input type="text" name="name" value="<?php echo $list[0]['name']?>" class="input-xlarge" >
+
+						<label>电话</label>
+						<input type="text" name="phone" value="<?php echo $list[0]['phone']?>" class="input-xlarge" placeholder="">
+
+
+						<label>密码</label>
+						<input type="password" name="password" value="" class="input-xlarge" placeholder="">
+						
+						<input name="id" type="hidden" value="<?php echo $list[0]['id']?>">
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+				
+					</fieldset>
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

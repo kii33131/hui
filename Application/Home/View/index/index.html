@@ -1,0 +1,194 @@
+<!--内容区域-->
+  <script language="javascript">
+  function del_sure(){
+
+    //alert("ds");
+
+    // return false;
+  var gnl=confirm("确定要删除订单吗?");
+  if (gnl==true){
+    return true;
+  }else{
+    return false;
+  }
+
+
+  }
+
+
+
+    function del_surel(){
+
+  
+	  var gnl=confirm("确定要退款吗?");
+	  if (gnl==true){
+	    return true;
+	  }else{
+	    return false;
+	  }
+
+   }
+
+
+
+  </script>
+
+<div class="help_content">
+	   
+        <include file="User:comment" />
+        <!--内容右边-->
+        <div class="help_con_right">
+            <div class="vip_top">我的订单</div>
+            <div class="order_info">
+
+                <!--
+
+            	<table width="1010" cellpadding="0" cellspacing="0" border="0">
+                	<tr>
+                    	<th width="226">订单编号</th>
+                    	<th width="156">总价</th>
+                    	<th width="155">状态</th>
+                        <th width="155">付款状态</th>
+                    	<th width="305">下单时间</th>
+                    	<th width="168">操作</th>
+                    </tr>
+                    <?php if(!empty($list)):?>
+                     <?php foreach($list as $val):?>   
+                   
+                    <tr>
+                    	<td width="226" height="71"><div class="td_img"><a><?php echo $val['danhao']?></a></div></td>
+                    	<td width="156"><p class="td_price"><?php echo remoney($val['id']) ?>元<br /><?php echo fukuan($val['pay'])?></p></td>
+                    	<td width="155"><p class="zhuantai"><?php wozifu($val['status']) ?></p></td>
+
+                        <td width="155"><p class="zhuantai"><?php if($val['spay']==0){echo '未付款';} if($val['spay']==1){echo '已付款';} if($val['spay']==2){echo '已退款';} if($val['spay']==3){echo '申请退款';} ?></p></td>
+
+
+
+                    	<td width="305"><p class="zhuantai"><?php echo date('Y-m-d',$val['created'])?><br /><?php echo date('H:i:s',$val['created'])?><br /></p></td>
+                    	<td>
+                        	<div class="caozuo">
+                            	<a href="{:U('User/delete',array('id'=>$val['id']))}" onclick="Javascript:return del_sure()">
+                                删除|
+                                </a>
+                                
+                                <?php
+                                   if($val['spay']==1){
+
+                                    echo "<a onclick='Javascript:return del_surel()' href='".U('tui',array('id'=>$val['id']))."'>".申请退款."</a>";
+                                   }else{
+
+                                       echo "<a href='".U('Shop/pay',array('cate_id'=>$val['id']))."'>".去付款."</a>";     
+
+                                   } 
+
+
+                                ?>
+
+                                
+                                  
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
+                    <?php endif;?>
+
+                    
+                </table> -->
+
+                <table  width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      
+                      <th >订单编号</th>
+                      <th>总价</th>
+                      <th>状态</th>
+                        <th>付款状态</th>
+                      <th>下单时间</th>
+                      <th>操作</th>
+
+                    </tr>
+                      <?php if(!empty($list)):?>
+                     <?php foreach($list as $val):?>  
+                     <tr border="1">
+                      <td  align="center" border="0" style="height:60px;">
+                        <?php echo $val['danhao']?>
+
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php echo remoney($val['id']) ?>元<br /><?php echo fukuan($val['pay'])?>
+                        
+                      </td >
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php wozifu($val['status'],$val['spay']) ?>
+                        
+                      </td align="center">
+
+                      <td align="center" border="0" style="height:60px;" >
+                        <?php echo $val['spay']; ?>
+                        
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <?php echo date('Y-m-d',$val['created'])?><br /><?php echo date('H:i:s',$val['created'])?>
+                        
+                      </td>
+
+                      <td align="center" border="0" style="height:60px;">
+                        <a href="{:U('User/delete',array('id'=>$val['id']))}" onclick="Javascript:return del_sure()">
+                                删除|
+                                </a>
+                                
+                                <?php
+                                   if($val['spay']==1){
+                                      
+                                    echo "<a onclick='Javascript:return del_surel()' href='".U('tui',array('id'=>$val['id']))."'>".申请退款."</a>"; 
+                                  // echo '等待发货';
+
+
+                                   }else{
+
+                                       echo "<a href='".U('Shop/pay',array('cate_id'=>$val['id']))."'>".去付款."</a>";     
+
+                                   } 
+
+
+                                ?>
+                        
+                      </td>
+                      
+                    </tr>
+
+                      <?php endforeach;?>
+                    <?php endif;?>
+
+
+                </table>
+
+
+                <div class="order_pages">
+
+               <div id="page">
+                 <?php echo $page;?>
+              </div>
+              <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

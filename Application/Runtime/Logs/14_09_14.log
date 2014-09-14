@@ -1,0 +1,556 @@
+[ 2014-09-14T10:18:59+08:00 ] 127.0.0.1 /sms/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001425s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000886s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002228s ]
+
+[ 2014-09-14T10:19:04+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `xy_free` [ RunTime:0.051972s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `xy_remen` [ RunTime:0.030877s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `xy_category` [ RunTime:0.017346s ]
+SQL: SELECT * FROM `xy_category` WHERE ( `pid` = 0 )  [ RunTime:0.000779s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000363s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.031793s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_goods` LIMIT 1   [ RunTime:0.000673s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php on line 94 and defined C:\xampp\htdocs\sms\ThinkPHP\Library\Think\Page.class.php 第 57 行.
+SQL: SELECT * FROM `xy_goods` WHERE ( `stock` > 0 ) LIMIT 0,32   [ RunTime:0.014139s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000436s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000519s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 175 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000605s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000380s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000315s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [8] Undefined variable: cateidsse C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 458 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000419s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000332s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000590s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.025225s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.016490s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096979s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001249s ]
+
+[ 2014-09-14T10:19:05+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+ERR: 非法操作:undefined
+
+[ 2014-09-14T10:19:23+08:00 ] 127.0.0.1 /sms/index.php/Home/User/jieshao.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+SQL: SHOW COLUMNS FROM `xy_help` [ RunTime:0.025169s ]
+SQL: SELECT * FROM `xy_help` WHERE ( `status` = 2 )  [ RunTime:0.018173s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000369s ]
+NOTIC: [8] Undefined variable: freed C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\7c1e339a079735526c51aacb8db877a4.php 第 6 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\7c1e339a079735526c51aacb8db877a4.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\7c1e339a079735526c51aacb8db877a4.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\7c1e339a079735526c51aacb8db877a4.php 第 175 行.
+NOTIC: [8] Undefined variable: freed C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\7c1e339a079735526c51aacb8db877a4.php 第 193 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037581s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037676s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001505s ]
+
+[ 2014-09-14T10:21:41+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/shu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+SQL: UPDATE xy_goods SET shu=shu+1 WHERE id=38 [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001102s ]
+
+[ 2014-09-14T10:21:41+08:00 ] 127.0.0.1 /sms/index.php/Home/index/xgoods/id/38.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+SQL: SHOW COLUMNS FROM `xy_free` [ RunTime:0.004215s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `xy_remen` [ RunTime:0.004321s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.004114s ]
+SQL: SELECT * FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.004413s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT * FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) ORDER BY created DESC LIMIT 0,3   [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `xy_category` [ RunTime:0.004407s ]
+SQL: SELECT * FROM `xy_category` WHERE ( `pid` = 0 )  [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005267s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `xy_simages` [ RunTime:0.004487s ]
+SQL: SELECT * FROM `xy_simages` WHERE ( `goods_id` = 38 )  [ RunTime:0.000358s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY shu DESC LIMIT 10   [ RunTime:0.000381s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `title` = '黄杨洪玉雕' )  [ RunTime:0.000308s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `pid` = null )  [ RunTime:0.000280s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 299 行.
+SQL: SHOW COLUMNS FROM `xy_goocate` [ RunTime:0.004306s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` IN ('') )  [ RunTime:0.000316s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 312 行.
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000393s ]
+SQL: SELECT * FROM `xy_goods` LIMIT 5   [ RunTime:0.000355s ]
+SQL: SELECT * FROM `xy_goocate` WHERE ( `goods_id` = 38 )  [ RunTime:0.000308s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` = 101 )  [ RunTime:0.000272s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000442s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY money ASC LIMIT 5   [ RunTime:0.000419s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000432s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000512s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 175 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000425s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000323s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000320s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000317s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000283s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000455s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000328s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000317s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000330s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057175s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001426s ]
+
+[ 2014-09-14T10:21:41+08:00 ] 127.0.0.1 /sms/index.php/Home/Verify/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001394s ]
+
+[ 2014-09-14T10:21:51+08:00 ] 127.0.0.1 /sms/index.php/Home/Shop/index/id/38.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005295s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000675s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000333s ]
+NOTIC: [8] Undefined variable: freed C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\29837dffacc759ac37da4e6470d12ca9.php 第 6 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\29837dffacc759ac37da4e6470d12ca9.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\29837dffacc759ac37da4e6470d12ca9.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\29837dffacc759ac37da4e6470d12ca9.php 第 175 行.
+NOTIC: [8] Undefined variable: freed C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\29837dffacc759ac37da4e6470d12ca9.php 第 193 行.
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.004172s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000437s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037763s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037859s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001492s ]
+
+[ 2014-09-14T10:21:54+08:00 ] 127.0.0.1 /sms/index.php/Home/Shop/jiesuan.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000253s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001081s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Home\Controller\ShopController.class.php 第 148 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+
+[ 2014-09-14T10:22:12+08:00 ] 127.0.0.1 /sms/index.php/Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005380s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY created DESC LIMIT 1   [ RunTime:0.000533s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.004585s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000510s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041990s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001536s ]
+
+[ 2014-09-14T10:22:20+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `xy_free` [ RunTime:0.004287s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `xy_remen` [ RunTime:0.004437s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `xy_category` [ RunTime:0.004835s ]
+SQL: SELECT * FROM `xy_category` WHERE ( `pid` = 0 )  [ RunTime:0.000426s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000345s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005744s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_goods` LIMIT 1   [ RunTime:0.000281s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php on line 94 and defined C:\xampp\htdocs\sms\ThinkPHP\Library\Think\Page.class.php 第 57 行.
+SQL: SELECT * FROM `xy_goods` WHERE ( `stock` > 0 ) LIMIT 0,32   [ RunTime:0.000714s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000440s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 175 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000444s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000342s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000314s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [8] Undefined variable: cateidsse C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\46262555db768db222dbace1c7130a17.php 第 458 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000536s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000398s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000336s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+NOTIC: [2] urlencode() expects parameter 1 to be string, array given C:\xampp\htdocs\sms\ThinkPHP\Common\functions.php 第 918 行.
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.004143s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000355s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001383s ]
+
+[ 2014-09-14T10:22:20+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001058s ]
+ERR: 非法操作:undefined
+
+[ 2014-09-14T10:22:23+08:00 ] 127.0.0.1 /sms/index.php/Home/Index/shu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: UPDATE xy_goods SET shu=shu+1 WHERE id=38 [ RunTime:0.000372s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2014-09-14T10:22:24+08:00 ] 127.0.0.1 /sms/index.php/Home/index/xgoods/id/38.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+SQL: SHOW COLUMNS FROM `xy_free` [ RunTime:0.004536s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `xy_remen` [ RunTime:0.004455s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.005351s ]
+SQL: SELECT * FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.004376s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) LIMIT 1   [ RunTime:0.000454s ]
+SQL: SELECT * FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) ORDER BY created DESC LIMIT 0,3   [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `xy_category` [ RunTime:0.004393s ]
+SQL: SELECT * FROM `xy_category` WHERE ( `pid` = 0 )  [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005053s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `xy_simages` [ RunTime:0.004280s ]
+SQL: SELECT * FROM `xy_simages` WHERE ( `goods_id` = 38 )  [ RunTime:0.000356s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY shu DESC LIMIT 10   [ RunTime:0.000416s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `title` = '黄杨洪玉雕' )  [ RunTime:0.000303s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `pid` = null )  [ RunTime:0.000283s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 299 行.
+SQL: SHOW COLUMNS FROM `xy_goocate` [ RunTime:0.004420s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` IN ('') )  [ RunTime:0.000370s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 312 行.
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000410s ]
+SQL: SELECT * FROM `xy_goods` LIMIT 5   [ RunTime:0.000364s ]
+SQL: SELECT * FROM `xy_goocate` WHERE ( `goods_id` = 38 )  [ RunTime:0.000289s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` = 101 )  [ RunTime:0.000336s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000376s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY money ASC LIMIT 5   [ RunTime:0.000667s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000482s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000595s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 175 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000422s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000327s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.000305s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000312s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000272s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000286s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000288s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000482s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000474s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001106s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001223s ]
+
+[ 2014-09-14T10:22:24+08:00 ] 127.0.0.1 /sms/index.php/Home/Verify/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001544s ]
+
+[ 2014-09-14T10:22:30+08:00 ] 127.0.0.1 /sms/index.php/Home/index/xgoods/id/38.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `xy_free` [ RunTime:0.004224s ]
+SQL: SELECT * FROM `xy_free` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `xy_remen` [ RunTime:0.005144s ]
+SQL: SELECT * FROM `xy_remen`  [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `xy_images` [ RunTime:0.004090s ]
+SQL: SELECT * FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.004489s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) LIMIT 1   [ RunTime:0.000325s ]
+SQL: SELECT * FROM `xy_comment` WHERE ( `status` = 1 ) AND ( `goods_id` = 38 ) ORDER BY created DESC LIMIT 0,3   [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `xy_category` [ RunTime:0.004434s ]
+SQL: SELECT * FROM `xy_category` WHERE ( `pid` = 0 )  [ RunTime:0.000437s ]
+SQL: SHOW COLUMNS FROM `xy_goods` [ RunTime:0.005259s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `xy_simages` [ RunTime:0.004710s ]
+SQL: SELECT * FROM `xy_simages` WHERE ( `goods_id` = 38 )  [ RunTime:0.000536s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY shu DESC LIMIT 10   [ RunTime:0.000504s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `title` = '黄杨洪玉雕' )  [ RunTime:0.000334s ]
+SQL: SELECT `id` FROM `xy_category` WHERE ( `pid` = null )  [ RunTime:0.000501s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 299 行.
+SQL: SHOW COLUMNS FROM `xy_goocate` [ RunTime:0.004433s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` IN ('') )  [ RunTime:0.000339s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Home\Controller\IndexController.class.php 第 312 行.
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000422s ]
+SQL: SELECT * FROM `xy_goods` LIMIT 5   [ RunTime:0.000369s ]
+SQL: SELECT * FROM `xy_goocate` WHERE ( `goods_id` = 38 )  [ RunTime:0.000298s ]
+SQL: SELECT `goods_id` FROM `xy_goocate` WHERE ( `category_id` = 101 )  [ RunTime:0.000286s ]
+SQL: SELECT * FROM `xy_goods` WHERE ( `id` IN ('') ) LIMIT 5   [ RunTime:0.000408s ]
+SQL: SELECT * FROM `xy_goods` ORDER BY money ASC LIMIT 5   [ RunTime:0.000488s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000488s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000602s ]
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 171 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 173 行.
+NOTIC: [8] Undefined index: Home C:\xampp\htdocs\sms\Application\Runtime\Cache\Home\976e1274215e00d206eccc2f8a1501c2.php 第 175 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 96 )  [ RunTime:0.000449s ]
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 28 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 97 )  [ RunTime:0.000330s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `id`,`title` FROM `xy_category` WHERE ( `pid` = 98 )  [ RunTime:0.001038s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 25 行.
+NOTIC: [8] Undefined variable: opt C:\xampp\htdocs\sms\Application\Common\Common\function.php 第 32 行.
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000520s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000384s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000307s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000323s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000309s ]
+SQL: SELECT `filename` FROM `xy_images` WHERE ( `goods_id` = 38 )  [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038849s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001488s ]
+
+[ 2014-09-14T10:22:31+08:00 ] 127.0.0.1 /sms/index.php/Home/Verify/code.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001897s ]
+

@@ -1,0 +1,198 @@
+<script>
+    function showhidediv(id){
+    var sbtitle=document.getElementById(id);
+    if(sbtitle){
+       sbtitle.style.display='block';
+    }
+} 
+
+
+
+     function close1(id){
+    var sbtitle=document.getElementById(id);
+    if(sbtitle){
+       sbtitle.style.display='none';
+    }
+}
+
+</script>
+<div class="clear"></div>
+<div class="hty_content">
+
+
+    <h2>和田玉</h2>
+	<div class="hty_con_left">
+    	<div class="hty_con_left_top">
+        	<dl>
+            	<dt><img src="__PUBLIC__/imgaes/hty_03.jpg" /></dt>
+                <dd>
+                	<div class="hty_dd_top">
+                    	<p>
+                        	<span>黄杨洪</span>
+                        	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通
+                        </p>
+                    </div>
+                    <div class="hty_dd_bottom">
+                    	<p id="hty_p" onmouseout ="close1('hty_quanbu')" onmousemove=" showhidediv('hty_quanbu')"><img src="__PUBLIC__/imgaes/hty_20.jpg" /></p>
+                    	<div class="hty_quanbu" id="hty_quanbu">
+                        	<div class="hty_btn" onclick="close1('hty_quanbu')"><img src="__PUBLIC__/imgaes/hty.png" /></div>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        	<p>
+                            	1973年生于重庆，1995年开始从事玉雕，师承上海玉雕厂程广彦。2008年成立个人玉雕工作室——［博润堂］。他善于雕刻花鸟题材作品。造型讲究审美重点的突出及其逼真动态，常常通 
+                            </p>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+      
+
+<script type="text/javascript">
+    $(function() {
+        $('.worini').marquee({
+            auto: true,
+            interval: 2000,
+            showNum: 5,
+            stepLen: 1,
+            type: 'vertical'
+        });
+    })
+</script>
+
+
+        <div class="hty_bottom" >
+
+            <p class="hty_p">大师奖项</p>
+
+            <div class="worini">
+        	<ul class="hty_bottom_ul">
+            	   
+                lioste
+                <?php if(!empty($lioste)):?>
+                <?php foreach($lioste as $val): ?>
+            	<li>
+                	<dl>
+                    	<dt><img style="width:200px; height:153px" src="__ROOT__/Uploads/<?php echo $val['filename'];?>"/></dt>
+                       
+                    </dl>
+                </li>
+
+                 <?php endforeach;?>  
+            <?php endif;?>
+
+                
+
+              
+
+
+
+
+
+
+               
+                
+            	
+            	
+            	
+            </ul>
+
+            </div>
+
+           
+        	<ul class="pinyu_ul">
+            	<p class="hty_p">品玉评玉</p>
+
+                 <?php if(!empty($commentlist)):?>
+                <?php foreach($commentlist as $val): ?>
+
+                <li>
+                    <dl>
+                        <dt><img style="width:199px;height:150px;" src="__ROOT__/Uploads/<?php echo getonepicture($val['goods_id']);?>" /></dt>
+                        <dd>
+                            <p class="top_p">
+                                <?php echo getallg($val['goods_id'])?>
+                            </p>
+                            <p>
+                                <span style="color:red"><?php echo getallemail($val['user_id'])?>：</span><?php echo $val['content']?>
+                            </p>
+                        </dd>
+                    </dl>
+                </li>
+            
+           <?php endforeach;?>  
+            <?php endif;?>
+     
+            
+            </ul> 
+            <p class="hty_bot_bg"><img src="__PUBLIC__/imgaes/hty_28.jpg" /></p>
+        </div>
+    </div>
+    <div class="hty_con_right">
+    	<ul>
+
+            <?php if(!empty($list)):?>
+                <?php foreach($list as $val): ?>
+        	<li>
+            	<dl>
+                	<dt><a  href="{:U('index/xgoods',array('id'=>$val['id']))}"><img style="height:230px;width:230px;" src="__ROOT__/Uploads/<?php echo reurl(getonepicture($val['id']));?>" /></a></dt>
+                    <dd>
+                    	<a href="#">
+                        	<p><?php echo $val['name']?></p>
+                            <strong>￥<?php echo $val['money']?></strong>
+                        </a>
+                    </dd>
+                </dl>
+            </li>
+              <?php endforeach;?>  
+        	<?php endif;?>
+     
+      
+        </ul>
+    </div>
+       <div id="page">
+              <?php echo $page;?>
+         </div>   
+
+          <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+
+</div>

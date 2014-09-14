@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>美勃-后台管理中心</title>
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/lib/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/stylesheets/theme.css">
+		<link rel="stylesheet" href="__PUBLIC__/admin/lib/font-awesome/css/font-awesome.css">
+		<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.0.min.js"></script>
+		<script src="__PUBLIC__/admin/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/Validform_v5.3.2_min.js"></script>
+		
+
+
+		<!-- Demo page code -->
+
+		<style type="text/css">
+			#line-chart {
+				height:300px;
+				width:800px;
+				margin: 0px auto;
+				margin-top: 1em;
+			}
+			.brand { font-family: georgia, serif; }
+			.brand .first {
+				color: #ccc;
+				font-style: italic;
+			}
+			.brand .second {
+				color: #fff;
+				font-weight: bold;
+			}
+		</style>
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" href="__PUBLIC__/admin/assets/ico/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="__PUBLIC__/admin/assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="__PUBLIC__/admin/assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="__PUBLIC__/admin/assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="__PUBLIC__/admin/assets/ico/apple-touch-icon-57-precomposed.png">
+		
+		
+		<script src="__PUBLIC__/admin/lib/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript">
+		$("[rel=tooltip]").tooltip();
+		$(function() {
+		$('.demo-cancel-click').click(function(){return false;});
+		});
+		</script>
+
+
+		
+	</head>
+
+  <!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+  <!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+  <!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--> 
+	<body class=""> 
+		<!--<![endif]-->
+
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav pull-right">
+					<li id="fat-menu" class="dropdown">
+						<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-user"></i> <?php echo $_SESSION['admin']['name']; ?>
+							<i class="icon-caret-down"></i>
+						</a>
+
+						<ul class="dropdown-menu">
+						
+							<li class="divider"></li>
+							<li><a tabindex="-1" class="visible-phone" href="#">设置</a></li>
+							<li class="divider visible-phone">
+								
+
+							</li>
+							<li><a tabindex="-1" href="{:U('Login/delete')}">注销</a></li>
+
+							<p class="coanimabi"></p>
+						</ul>
+					</li>
+				</ul>
+				<a class="brand" href="index.html"><span class="first">美勃</span> <span class="second">后台管理中心</span></a>
+			</div>
+		</div>
+
+		<div class="sidebar-nav">
+			<form class="search form-inline">
+				<input type="text" placeholder="搜索...">
+			</form>
+
+
+			
+			
+		
+
+			
+
+
+
+
+		
+
+			
+			
+
+			<a href="#dashboard-lmenu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-leaf"></i>首页-模块<i class="icon-chevron-up"></i></a>
+			<ul id="dashboard-lmenu" class="nav nav-list collapse">
+				<li><a href="{:U('Zhishi/index')}">首页模块列表</a></li>
+
+				<li><a href="{:U('Zhishi/add')}">首页模块添加</a></li>
+				
+
+			</ul> 
+
+		
+
+			<a href="#article-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-file"></i>产品服务-模块 <i class="icon-chevron-up"></i></a>
+			<ul id="article-menu" class="nav nav-list collapse">
+				<li ><a href="{:U('Category/index',array('pid'=>0))}">产品分类列表</a></li>
+				<li ><a href="{:U('Category/add',array('pid'=>0))}">添加产品分类</a></li>
+				
+			</ul>
+
+			<a href="#picture-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-picture"></i>服务管理 <i class="icon-chevron-up"></i></a>
+			<ul id="picture-menu" class="nav nav-list collapse">
+				<li ><a href="{:U('Goods/index')}">服务项目</a></li>
+				<li ><a href="{:U('Goods/add')}">添加服务</a></li>
+				
+			</ul>
+
+
+
+				<a href="#admin-meonu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-globe"></i>关于百特-模块 <i class="icon-chevron-up"></i></a>
+			<ul id="admin-meonu" class="nav nav-list collapse">
+				<li ><a href="{:U('Help/index')}">模块列表</a></li>
+				<li ><a href="{:U('Help/add')}">模块添加</a></li>
+
+				
+				
+			</ul>
+
+
+			
+			<a href="#site-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-wrench"></i>网站设置 <i class="icon-chevron-up"></i></a>
+			<ul id="site-menu" class="nav nav-list collapse">
+				<li ><a href="{:U('Index/index')}">网站设置</a></li>
+				
+			</ul>
+
+
+			<a href="#admin-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-lock"></i>管理员帐户管理 <i class="icon-chevron-up"></i></a>
+			<ul id="admin-menu" class="nav nav-list collapse">
+				<li ><a href="{:U('User/view')}">管理员详情</a></li>
+				<li ><a href="{:U('User/edit')}">管理员编辑</a></li>
+				
+			</ul>
+
+			<!--添加展会--> 
+
+
+
+
+				
+
+
+
+
+				<a href="#site-menoouj" class="nav-header collapsed" data-toggle="collapse"><i class="icon-plane"></i>seo 管理 <i class="icon-chevron-up"></i></a>
+			<ul id="site-menoouj" class="nav nav-list collapse">
+				<li ><a href="{:U('Index/index')}">seo 列表</a></li>
+				
+			</ul>
+
+
+
+		</div>
+
+<div class="content">
+
+{__CONTENT__}
+       
+</div>
+
+</body>
+</html>
+
+

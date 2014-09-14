@@ -1,0 +1,112 @@
+
+ <script language="javascript">
+    window.opener.document.location.reload()
+</script>   
+
+
+<div class="effective_div">
+	<div class="cart3_content">
+    	<ul class="cart3_con_ul">
+        	<li>
+            	<div class="top_li">
+                	<p class="top_li_p1">商品列表</p>
+                	<p class="top_li_p2"></p>
+                </div>
+                <div class="cart3_table">
+                	<table width="1042" bgcolor="#fff" cellpadding="0" cellspacing="0">
+                        <tr class="last3_tr">
+                            <th width="545">商品名称</th>
+                            <th width="140">市场价</th>
+                            <th width="128">本店价</th>
+                            <th width="106">购买数量</th>
+                            <th width="123">小计</th>
+                        </tr>
+
+                <?php if(!empty($cookies)):?>
+
+                    <?php foreach($cookies as $arr):?>
+                        <tr>
+                        	<td width="545"><?php echo $arr['name']?></td>
+                            <td width="140">￥<?php echo $arr['smoney']?>元</td>
+                            <td width="128">￥<?php echo $arr['money']?></td>
+                            <td width="106"><?php echo $arr['num']?></td>
+                            <td	width="123">￥<?php echo $num?></td>
+                        </tr>
+                    <?php endforeach;?>
+                <?php endif;?>
+
+                        <tr class="last3_tr">
+                        	<td colspan="5">
+                            	<div class="cart_bottom cart3_td">
+                                	<p class="cart_bot_p1">
+                                        比市场价<span>￥<?php echo $num1?>元</span>节省了<span>￥<?php echo $cha?>元</span>
+                                    </p>
+                                    <strong>商品总金额：<span>￥<?php echo $num?>元</span></strong>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li>
+            	<div class="top_li">
+                	<p class="top_li_p1">收货信息</p>
+                	<p class="top_li_p2"></p>
+                </div>
+                <div class="cart3_table2">
+                	<table bgcolor="#fff" width="1042">
+                    	<tr>
+                            <td width="146" class="td_rigt">收货人姓名：</td>
+                            <td width="520" class="td_left"><?php echo $list[0]['name']?></td>
+                            <td width="95" class="td_rigt">电子邮件地址：</td>
+                            <td width="280" class="td_left"><?php echo $list[0]['email']?></td>
+                        </tr>
+                        <tr>
+                            <td width="146" class="td_rigt">详细地址：</td>
+                            <td width="520" class="td_left"><?php echo $list[0]['dizhi']?></td>
+                            <td width="95" class="td_rigt">邮政编码：</td>
+                            <td width="280" class="td_left"><?php echo $list[0]['bianma']?></td>
+                        </tr>
+                        <tr>
+                            <td width="146" class="td_rigt">标志建筑：</td>
+                            <td width="520" class="td_left"><?php echo $list[0]['landmark']?></td>
+                            <td width="95" class="td_rigt">最佳送货时间：</td>
+                            <td width="280" class="td_left"><?php echo $list[0]['ztime']?></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            
+
+            <form action="{:U('Shop/dindan')}" method="post">
+
+           
+            <li>
+            	<div class="top_li">
+                	<p class="top_li_p1">订单附言</p>
+                	<p class="top_li_p2"></p>
+                </div>
+                <div class="cart3_table2">
+                	<p class="cart3_p_bg">
+                    	<span>订单附言：</span>
+                        <textarea name="fuyan" cols="" rows="" class="cart3_textarea"></textarea>
+                    </p>
+                </div>
+            </li>
+            <li>
+            	<div class="top_li">
+                	<p class="top_li_p1">总计</p>
+                	
+                </div>
+                <div class="cart3_table2 cart3_p_bg1">
+                	<p class="price_cart">商品总价：<span>￥<?php echo $num; ?></span></p>
+                    <div class="clear"></div>
+                    <p class="price_cart2">应付款金额：<span>￥<?php echo $num; ?></span></p>
+                </div>
+                <div class="cart3_bottom3"><input name="" type="image" src="__PUBLIC__/imgaes/Cart3_03.jpg" /></div>
+            </li>
+        </form>
+
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,126 @@
+<script>
+	function jj(){
+		
+		 $('#bofang').attr('value','vcastr_file=images/123456.flv&LogoText=www.boruntang.com&BufferTime=3&IsAutoPlay=1');
+
+		 $('#bofam').attr('flashvars','vcastr_file=images/123456.flv&LogoText=www.boruntang.com&IsAutoPlay=1');
+
+		
+
+
+	}
+
+	function ff(){
+
+
+		 $('#bofang').attr('value','vcastr_file=images/123654.flv&LogoText=www.boruntang.com&BufferTime=3&IsAutoPlay=1');
+
+		 $('#bofam').attr('flashvars','vcastr_file=images/123654.flv&LogoText=www.boruntang.com&IsAutoPlay=1');
+	}
+
+</script>
+<!--内容-->
+<div class="effective_div">
+	<div class="gy_con_div video_con_div">
+    	<div class="gy_con_top">
+        	<ul>
+            	<li><a href="{:U('index/index')}">首页  》</a></li>
+            	<li><a href="{:U('Brt/index')}">博润堂  》</a></li>
+            	<li><a href="#">视频欣赏</a></li>
+            </ul>
+        </div>
+
+
+	<style>
+		.chas{
+
+			position: absolute;
+			top:-342px;
+			left:-6px;
+		}
+		.wokao{
+
+			position: absolute;
+			top:385px;
+			left:-139px;
+		}
+
+
+		.llk{
+
+			display: none;
+		}
+		
+	</style>
+
+	<script type="text/javascript">
+	function halo(){
+
+		$('.jjiu').removeClass('llk');
+
+	}
+
+	</script>
+		
+
+
+		
+      
+        <div class="video_con_show">
+        	<div id='img_box'>
+                <div id='img_box_show'></div>
+                <div class="img_box_title">中国海派玉雕大师视频欣赏</div>
+				
+
+
+                <div class="img_box_bot">
+								
+						
+                <img src="__PUBLIC__/imgaes/about_spxs_03.jpg" /> 
+                <div class="chas">
+				   <object class id="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="641" height="363">
+				  <param name="movie" value="__PUBLIC__/js/flvplayer.swf">
+				  <param name="quality" value="high">
+				  <param name="allowFullScreen" value="true">
+				  <param name="FlashVars" id="bofang" value="<?php echo $val;?>">
+				  <embed id="bofam" src="__PUBLIC__/js/flvplayer.swf" allowfullscreen="true" flashvars="<?php echo $flash;?>" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="641" height="363"></embed>
+				</object>
+	
+				<div>
+                </div>
+
+				
+                <div id='img_box_con' class="wokao">
+                    <div class='prev'><img class="jjiu llk" src="__PUBLIC__/imgaes/about_spxs_04.jpg" /></div> 
+                    <ul class='img_list' onmousemove="halo()">
+
+                        <li>
+
+                        	<dl class="box_dl">
+                            	<dt><a href="{:U('Brt/spxs',array('wo'=>1))}"><img onclick="jj()" src="__PUBLIC__/imgaes/sp1.jpg"></a></dt>
+                                <dd>中国海派玉雕大师视频欣赏</dd>
+                            </dl>
+
+
+                        </li>
+
+                           <li>
+
+                        	<dl class="box_dl">
+                            	<dt><a href="{:U('Brt/spxs',array('wo'=>2))}"><img onclick="ff()" src="__PUBLIC__/imgaes/T08.jpg"></a></dt>
+                                <dd>玉雕大师视频欣赏</dd>
+                            </dl>
+
+                            
+                        </li>
+                        
+                    </ul>
+                    <div class='next'><img class="jjiu llk" src="__PUBLIC__/imgaes/about_spxs_05.jpg" /></div>
+                </div>  
+
+
+            </div>
+        </div>  
+       
+    </div>
+</div>

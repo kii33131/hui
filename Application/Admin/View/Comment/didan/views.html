@@ -1,0 +1,127 @@
+
+
+	<ul class="breadcrumb">
+	    <li><a href="index.html">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Didan/index')}">订单管理</a> <span class="divider">/</span></li>
+	    <li class="active">订单查看</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">  
+
+            <h2>订单详情</h2>
+	            <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>订单号</th>
+
+                        <th>买家附言</th>
+                        <th>付款方式</th>
+                        <th>付款状态</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                      <tr>
+                        <td><?php echo $list['danhao']?></td>
+                        
+                        <td><?php echo $list['fuyan'] ?></td>
+                        <td><?php echo fukuan($list['pay'])  ?></td>
+                        
+                        <td width="155"><p class="zhuantai"><h3><?php if($list['spay']==0){echo '未付款';} if($list['spay']==1){echo '已付款';} if($list['spay']==2){echo '已退款';} if($list['spay']==3){echo '申请退款';} ?></h3></p></td>  
+
+                      </tr>
+                 
+                    </tbody>
+
+                  </table>
+              </div>
+
+
+               <h2>详情清单</h2>
+              <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>商品名称</th>
+                        <th>商品数量</th>
+                        <th>市场价</th>
+                        <th>实际价格</th>
+                        <th>小计</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php if(!empty($ltst)):?>
+                      <?php foreach($ltst as $kk):?>
+                      <tr>
+                        <td><?php echo $kk['name']?></td>
+                        
+                        <td><?php echo $kk['num'] ?></td>
+                        <td><?php echo $kk['smoney']  ?></td>
+                        <td><?php echo $kk['money']  ?></td>
+                        <td><?php echo $kk['money']*$kk['num']  ?>.00元</td>
+
+                      </tr>
+                      <?php endforeach;?>
+                      <?php endif;?>
+                    </tbody>
+
+                  </table>
+              </div>
+
+              <h2>总计</h2><span>￥<?php echo $num?>.00元</span>
+
+
+              <h2>送货地址</h2>
+
+
+	            <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>收货人姓名</th>
+                        <th>城市</th>
+                       
+                        <th>详细地址</th>
+                        <th>手机号码</th>
+                        <th>电话号码</th>
+                        <th>标志建筑</th>
+                        <th>邮箱</th>
+                        <th>邮编</th>
+                        <th>最佳送货时间</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    
+                      <tr>
+                        <td><?php echo $lost[0]['name']?></td>
+
+                        <td><?php echo $lost[0]['omit'].' '.$lost[0]['city'].' '.$lost[0]['sanjak']?></td>
+                        <td><?php echo $lost[0]['dizhi']?></td>
+
+                        <td><?php echo $lost[0]['phone']?></td>
+
+                        <td><?php echo $lost[0]['tel']?></td>
+
+                        <td><?php echo $lost[0]['landmark']?></td>
+
+                        <td><?php echo $lost[0]['email']?></td>
+
+
+                        <td><?php echo $lost[0]['bianma']?></td>
+
+                        <td><?php echo $lost[0]['ztime']?></td>
+
+                      </tr>
+                 
+                    </tbody>
+
+                  </table>
+              </div>    
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

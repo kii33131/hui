@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><?php echo $freed['title']?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>stroe</title>
+
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/stylesheets/theme.css">
+        <link rel="stylesheet" href="__PUBLIC__/admin/lib/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css"/>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Validform_v5.3.2_min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/stylel.css"/>
+
+<!--
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style2.css"/> -->
+
+</head>
+<body style="background:#f7f7f7">
+<!--顶部-->
+<div class="ding">
+    <div class="effective_div">
+        <div class="ding_left">
+            <p>您好，<?php echo $_SESSION['Home']['name']?>欢迎光临博润堂！</p>
+
+            <?php if($_SESSION['Home']['name']){
+                 //echo ''; 
+
+                  echo "<a href='".U('login/zhu')."'>".'注销 '."</a>";  
+
+
+
+                }else{
+
+                   echo "<a href='".U('Login/index')."'>".'登陆 '."</a>";     
+
+                }
+
+
+
+                ?>
+
+                <?php 
+
+                if($_SESSION['Home']['name']==null){
+
+                   echo "<a href='".U('Reg/index')."'>".' | 注册 '."</a>"; 
+                }
+
+                ?>
+           <!--
+            <a href="{:U('Reg/index')}">注册</a>  -->
+        </div>
+        <div class="ding_right">
+            <dl>
+                <dt>客服热线：</dt>
+                <dd>400-082-1688</dd>
+            </dl>
+            <a href="{:U('User/index')}">我的订单&nbsp;|</a>
+            <a href="{:U('Cont/index')}">&nbsp;联系我们</a>
+        </div>
+    </div>
+</div>
+
+<?php if($freed['status']==1){
+
+    die('网站正在维护。。。');
+
+    }?>
+<!--头部-->
+<div class="help_header">
+  <div class="effective_div">
+        <div class="logo"><img src="__PUBLIC__/imgaes/logo.png" /></div>
+        <div class="help_hea_right">
+            <div class="help_hea_right_top">
+                <form action="{:U('Index/getgoods')}" method="get">
+
+                <input name="name" type="text"  class="help_text"/><input name="" type="image" class="help_imgage" src="__PUBLIC__/imgaes/help_03.jpg" />
+
+                </form>
+
+            </div>
+            <div class="help_hea_right_bot">
+                <p>热门搜索：碧玉 白玉 黄玉 羊脂玉 墨玉 玛瑙</p>
+            </div>
+        </div>
+  </div>
+</div>
+
+
+<!--导航栏-->
+<div class="help_daohang">
+    <div class="effective_div">
+      <ul class="stroe_daohang">
+            <li class="store_ul1_li">
+                <h2>全部分类</h2>
+
+                <ul class="store_daohang_ul">
+
+                    <?php if(!empty($fenlei)):?>
+                      <?php foreach($fenlei as $arr):?>
+                    <li>
+                        <div class="store_div_li"><?php echo $arr['title']?></div>
+
+                        <dl class="store_daohang_dl">
+                            <dd>
+                               
+                                <?php echo getCategoryc($arr['id']);?>
+                            </dd>
+                           
+                        </dl>
+                    </li>
+                   <?php endforeach;?>
+              <?php endif;?>
+
+
+                </ul>
+
+               
+            </li>
+      </ul>
+      <ul class="help_daohang_ul">
+        <li><a href="{:U('index/index')}">首页</a></li>
+        <li><a href="{:U('Brt/index')}">博润堂</a></li>
+        <!--
+        <li><a href="#">精品赏析</a></li> -->
+        <li><a href="{:U('Brt/news')}">最新资讯</a></li>
+        <li><a href="{:U('Cont/index')}">联系我们 </a></li>
+        <li><a href="{:U('Zshou/index')}">证书查询</a></li>
+      </ul>
+      <h1><a href="{:U('Shop/gowu')}">去结算</a></h1>
+    </div>
+</div>
+
+{__CONTENT__}
+
+    <div class="help_bottom">
+<div class="effective_div">
+    <!--底部左边-->
+    <div class="help_bot_left">
+        <strong>400-082-1688</strong>
+        <p>（周一至周日）服务时间：10:00- 22:00</p>
+        <a href="#"><img src="__PUBLIC__/imgaes/help1.png" /></a>
+        <a href="#"><img src="__PUBLIC__/imgaes/help2.png" /></a>
+    </div>
+    <!--底部中间-->
+    <div class="help_bot_cen">
+      <div class="help_bot_cen_ul">
+            <p>购物指南</p>
+            <ul>
+                <li><a href="{:U('User/zhuceil')}">注册用户</a></li>
+                <li><a href="#">购买流程</a></li>
+            </ul>
+        </div>
+        
+        <div class="help_bot_cen_ul">
+            <p>支付配送</p>
+            <ul>
+                <li><a href="{:U('User/zhifuf')}">支付方式</a></li>
+                <li><a href="{:U('User/wangszhuan')}">网上转账</a></li>
+                <li><a href="{:U('User/prrrr')}">配送流程</a></li>
+            </ul>
+        </div>
+        
+        <div class="help_bot_cen_ul">
+            <p>售后与服务</p>
+            <ul>
+                <li><a href="{:U('User/tuihuol')}">退换货流程</a></li>
+                <li><a href="{:U('User/shouhou')}">售后服务保证</a></li>
+                <li><a href="{:U('User/bais')}">免费服务及赠送</a></li>
+                <li><a href="{:U('User/pinz')}">品质保证</a></li>
+            </ul>
+        </div>
+        
+        <div class="help_bot_cen_ul">
+            <p>关于我们</p>
+            <ul>       
+                <li><a href="{:U('Brt/qyjj')}">御府介绍</a></li>
+                <li><a href="{:U('Brt/yjry')}">御府历程</a></li>
+                <li><a href="{:U('Brt/qpsx')}">御府展厅</a></li>
+                <li><a href="{:U('Brt/zxns')}">诚聘贤才</a></li>
+                <li><a href="{:U('Cont/index')}">联系我们</a></li>
+                <li><a href="{:U('User/zhuceil')}">帮助中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--底部右边-->
+    <div class="help_bot_right">
+        <strong>博润堂微信二维码</strong>
+        <a href="#"><img src="__PUBLIC__/imgaes/help_11.jpg" /></a>
+        <p>微信号：sdhish</p>
+    </div>
+</div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="effective_div">
+        <ul class="footer_ul">
+            <li>
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_15.jpg" /></dt>
+                    <dd>免费配证书</dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_17.jpg" /></dt>
+                    <dd>7天无理由退换</dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_19.jpg" /></dt>
+                    <dd>终身保养</dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_21.jpg" /></dt>
+                    <dd>赠送配绳</dd>
+                </dl>
+            </li>
+            <li>
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_23.jpg" /></dt>
+                    <dd>赠送锦盒</dd>
+                </dl>
+            </li>
+            <li class="foter_last_li">
+                <dl class="footer_dl">
+                    <dt><img src="__PUBLIC__/imgaes/help_25.jpg" /></dt>
+                    <dd>全国免运费</dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="bottom2">
+    <div class="effective_div">
+        <div class="bot2_ul">
+            <ul>
+                <li><a href="#">返回首页&nbsp;&nbsp;|</a></li>
+                <li><a href="#">法律声明&nbsp;&nbsp;|</a></li>
+                <li><a href="#">联系我们&nbsp;&nbsp;|</a></li>
+            </ul>
+        </div>
+        <p class="bot2_p">版权所有 © 博润堂 www.boruntang.com</p>
+    </div>
+</div>
+<div class="right_abs">
+    <ul class="right_abs_ul">
+        <li>
+            <p class="abs_ul_p1"><img src="__PUBLIC__/imgaes/store_07.jpg" /></p>
+            <p class="abs_ul_p2">扫码关注</p>
+        </li>
+        <li>
+            <p class="abs_ul_p3">
+            <!--
+            <img src="__PUBLIC__/imgaes/store_11.jpg" /> -->
+
+            <a target="_blank" href="http://www.taobao.com/webww/?ver=1&&touid=cntaobao%E5%8D%9A%E6%B6%A6%E5%A0%82%E9%BB%84%E6%9D%A8%E6%B4%AA&siteid=cntaobao&status=2&portalId=&gid=&itemsId="><img border="0" src="http://amos.alicdn.com/realonline.aw?v=2&uid=331363625&site=cntaobao&s=2&charset=utf-8" alt="点击这里给我发消息" /></a>
+
+
+
+
+            </p>
+
+
+            <p class="abs_ul_p4">
+                <a target="_blank" href="http://www.taobao.com/webww/?ver=1&&touid=cntaobao%E5%8D%9A%E6%B6%A6%E5%A0%82%E9%BB%84%E6%9D%A8%E6%B4%AA&siteid=cntaobao&status=2&portalId=&gid=&itemsId="><input name="" type="image" src="__PUBLIC__/imgaes/store_15.jpg" /></a>
+            </p>
+        </li>
+        <li>
+            <p class="abs_ul_p3">
+            <!--
+            <img src="__PUBLIC__/imgaes/store_19.jpg" /> -->
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0" src="__PUBLIC__/imgaes/store_19.jpg" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+
+            </p>
+            <p class="abs_ul_p4"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">QQ咨询</a></p>
+        </li>
+        <li>
+            <p class="abs_ul_p3" onclick="pageScroll()"><img src="__PUBLIC__/imgaes/store_23.jpg" /></p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+

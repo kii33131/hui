@@ -1,0 +1,160 @@
+<!--
+
+<script type="text/javascript">
+$(function(){
+    //$(".registerform").Validform();  //就这一行代码！;
+        
+    $(".iform").Validform({
+        tiptype:2
+    });
+    new PCAS("Province","City","Area","吉林省","松原市","宁江区")
+})
+</script> -->
+
+<script class="resources library" src="__PUBLIC__/js/area2.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/js/chilaArea.js"></script>
+ 
+ <link rel="stylesheet" href="__PUBLIC__/css/voitform.css" />
+  <link rel="stylesheet" href="__PUBLIC__/css/wp-syntax.css" />
+
+
+<script type="text/javascript">
+$(function(){
+    //$(".registerform").Validform();  //就这一行代码！;
+        
+    $(".registerform1").Validform({
+        tiptype:2
+    });
+})
+</script>
+
+
+    <script>        
+
+
+    </script>
+
+<script type="text/javascript">
+
+$(function (){
+  initComplexArea('seachprov', 'seachcity', 'seachdistrict', area_array, sub_array, '44', '0', '0');
+});
+
+//得到地区码
+function getAreaID(){
+  var area = 0;          
+  if($("#seachdistrict").val() != "0"){
+    area = $("#seachdistrict").val();                
+  }else if ($("#seachcity").val() != "0"){
+    area = $("#seachcity").val();
+  }else{
+    area = $("#seachprov").val();
+  }
+  return area;
+}
+
+function showAreaID() {
+  //地区码
+  var areaID = getAreaID();
+  //地区名
+  var areaName = getAreaNamebyID(areaID) ;
+  alert("您选择的地区码：" + areaID + "      地区名：" + areaName);            
+}
+
+//根据地区码查询地区名
+function getAreaNamebyID(areaID){
+  var areaName = "";
+  if(areaID.length == 2){
+    areaName = area_array[areaID];
+  }else if(areaID.length == 4){
+    var index1 = areaID.substring(0, 2);
+    areaName = area_array[index1] + " " + sub_array[index1][areaID];
+  }else if(areaID.length == 6){
+    var index1 = areaID.substring(0, 2);
+    var index2 = areaID.substring(0, 4);
+    areaName = area_array[index1] + " " + sub_array[index1][index2] + " " + sub_arr[index2][areaID];
+  }
+  return areaName;
+}
+</script>
+
+<!--内容区域-->
+<div class="help_content">
+  <div class="effective_div">
+      <!--内容左边-->
+    <include file="User:comment" />
+        <!--内容右边-->
+        <div class="help_con_right">
+            <div class="vip_top">个人信息</div>
+
+
+         
+
+          <form class="registerform1" action="{:U('User/edit')}" method="post">
+            <table>
+                <tr>
+               
+                    <td width="93"> 省*市</td>
+            <td colspan="3">
+
+            <div class="info">
+              <div>
+
+
+                <select id="Province"  name="omit"></select>&nbsp;&nbsp;
+                  <select id="City"  name="city" ></select>&nbsp;&nbsp;
+                  <select id="Area"  name="sanjak"></select>
+                  
+                  <script type="text/javascript">_init_area();</script>
+               </div>
+                <div id="show"></div>
+            </div>
+            <script type="text/javascript">
+            var Gid  = document.getElementById ;
+            var showArea = function(){
+              Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +  
+              Gid('s_city').value + " - 县/区" + 
+              Gid('s_county').value + "</h3>"
+                          }
+            Gid('s_county').setAttribute('onchange','showArea()');
+            </script> 
+                        <span>必填</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="93">收货人姓名：</td>
+                    <td width="455"><p><input name="name" type="text" class="cart2_text inputxt" datatype="*" value="<?php echo $list['name']?>"  errormsg="姓名不能为空" /></p><p>必填</p></td>
+                    <td width="109">电子邮件地址：</td>
+                    <td width="390"><p><input datatype="e" value="<?php echo $list['email']?>" name="email" type="text" errormsg="请使用正确的邮箱" class="cart2_text" /></p><p>必填</p></td>
+                </tr>
+                <tr>
+                    <td width="93">详细地址：</td>
+                    <td width="455"><p><input  datatype="*" value="<?php echo $list['dizhi']?>" name="dizhi" type="text" errormsg="详细地址不能为空" class="cart2_text" /></p><p>必填</p></td>
+                    <td width="109">邮政编码：</td>
+                    <td width="390"><p><input datatype="p"  value="<?php echo $list['bianma']?>" name="bianma" type="text" errormsg="请示用正确的邮编" class="cart2_text" /></p><p>必填</p></td>
+                </tr>
+                <tr>
+                    <td width="93">电话：</td>
+                    <td width="455"><p><input  name="tel" value="<?php echo $list['tel']?>" type="text" class="cart2_text" /></p><p>手机与固定电话至少填一项</p></td>
+                    <td width="109">手机：</td>
+                    <td width="390"><p> <input  value="<?php echo $list['phone']?>" name="phone" datatype="m" type="text" errormsg="请示用正确手机号" class="cart2_text" /></p></td>
+                </tr>
+                <tr>
+                    <td width="93">标志建筑：</td>
+                    <td width="455"><p><input errormsg="标志建筑必填" value="<?php echo $list['landmark']?>" datatype="*" name="landmark" type="text" class="cart2_text" /></p><p>必填</p></td>
+                    <td width="109">最佳送货时间：</td>
+                    <td width="390"><p><input name="ztime" value="<?php echo $list['ztime']?>" type="text" class="cart2_text" /></p></td>
+                </tr>
+                <tr class="last_tr">
+                    <td colspan="4"><input name="" type="image" class="cart2_image" src="__PUBLIC__/imgaes/Cart2_03.jpg" /></td>
+                </tr>
+            </table>
+           </form> 
+
+
+
+
+        </div>
+    </div>
+    
+</div>

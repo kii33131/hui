@@ -1,0 +1,47 @@
+<div class="clear"></div>
+<div class="nanhong">
+<h2>南红</h2>
+
+    <ul>
+
+        <?php if(!empty($list)):?>
+                <?php foreach($list as $val): ?>
+        <li>
+            <p class="p1"><a href="{:U('index/xgoods',array('id'=>$val['id']))}"><img style="height:230px;width:230px;" src="__ROOT__/Uploads/<?php echo reurl(getonepicture($val['id']));?>" /></a></p>
+            <a href="#" class="a1">
+                <strong><?php echo $val['name']?></strong>
+                <p>￥<?php echo $val['money']?></p>
+            </a>
+        </li>
+
+        <?php endforeach;?>  
+            <?php endif;?>
+
+
+
+          
+
+    </ul>
+</div>
+<div class="clear">
+     <div id="page">
+              <?php echo $page;?>
+         </div>   
+
+          <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+
+    
+</div>

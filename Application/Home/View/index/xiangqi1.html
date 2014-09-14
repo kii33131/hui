@@ -1,0 +1,661 @@
+<script src="__PUBLIC__/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/js/jquery.jqzoom.min.js" type="text/javascript"></script>
+<script>
+    $(function(){
+        var goodsid = $('.goodsid').val();
+     
+        $('.dianji').click(function(){
+
+            var content = $('.pinglun_text').val();
+
+            var code = $('.p_btn_text').val();
+
+            $.post('__URL__/pinlun',{'goodsid':goodsid,'content':content,'code':code},function(date){
+
+                    alert(date);
+
+
+            })
+
+        })
+
+
+
+        $(".deat_li").toggle(function(){
+
+            $(this).siblings(".deat_dl").show();
+            $(this).find("p").addClass("cur")
+            },function(){
+                $(this).find("p").removeClass("cur")
+                $(this).siblings(".deat_dl").hide();
+                })
+
+        $(".xingqu_top_ul ul li").click(function(){
+                var index=$(this).index();
+                $(".xingqu_ul2").eq(index).show().siblings().hide();
+                })  
+
+
+        
+
+    })
+
+   
+
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+        $(tab_conbox).find("li").hide();
+        $(tabtit).find("li:first").addClass("thistab").show(); 
+        $(tab_conbox).find("li:first").show();
+    
+        $(tabtit).find("li").bind(shijian,function(){
+          $(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+            var activeindex = $(tabtit).find("li").index(this);
+            $(tab_conbox).children().eq(activeindex).show().siblings().hide();
+            return false;
+        });
+    
+    };
+    /*调用方法如下：*/
+    $.jqtab("#tabs","#tab_conbox","click");
+    $.jqtab("#tabp","#xingqu_ul2","mouseenter");
+    //$.jqtab("#tabs2","#tab_conbox2","mouseenter");
+    
+});
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+
+    //alert("ds");
+     $(".tabs  li").eq(0).addClass("li_hover")
+    $('.tabs').click(function(){
+
+        $(this).addClass("li_hover").siblings().removeClass("li_hover")
+    })
+
+
+})
+    
+
+</script>
+
+
+<style>
+    .bbc{
+
+        margin-top: 15px;
+    }
+
+</style>
+
+ <!--
+<style type="text/css">
+
+img{vertical-align:top;border:0;}
+
+/* box */
+.box{width:610px;margin:100px auto;}
+.tb-pic a{display:table-cell;text-align:center;vertical-align:middle;}
+.tb-pic a img{vertical-align:middle;}
+.tb-pic a{*display:block;*font-family:Arial;*line-height:1;}
+.tb-thumb{margin:10px 0 0;overflow:hidden;}
+.tb-thumb li{background:none repeat scroll 0 0 transparent;float:left;height:99px;margin:0 6px 0 0;overflow:hidden;padding:1px;}
+.tb-s310, .tb-s310 a{height:400px;width:400px;}
+.tb-s310, .tb-s310 img{max-height:400px;max-width:400px;}
+.tb-s310 a{*font-size:271px;}
+.tb-s40 a{*font-size:35px;}
+.tb-s40, .tb-s40 a{height:40px;width:40px;}
+.tb-booth{border:1px solid #CDCDCD;position:relative;z-index:1;}
+.tb-thumb .tb-selected{background:none repeat scroll 0 0 #C30008;height:99px;padding:2px;}
+.tb-thumb .tb-selected div{background-color:#FFFFFF;border:medium none;}
+.tb-thumb li div{border:1px solid #CDCDCD;}
+.zoomDiv{z-index:999;position:absolute;top:0px;left:0px;width:400px;height:400px;background:#ffffff;border:1px solid #CCCCCC;display:none;text-align:center;overflow:hidden;}
+div.zoomMask{position:absolute;background:url("images/mask.png") repeat scroll 0 0 transparent;cursor:move;z-index:1;}
+</style>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $(".jqzoom").imagezoom();
+    
+    $("#thumblist li a").mousemove(function(){
+        $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+        $(".jqzoom").attr('src',$(this).find("img").attr("mid"));
+        $(".jqzoom").attr('rel',$(this).find("img").attr("big"));
+    });
+
+});
+</script>  -->
+
+
+
+<script type="text/javascript">
+
+$(function() {
+
+
+
+     $(document).ready(function(){   
+    $(".jqzoom").jqueryzoom({   
+        xzoom: 450, //设置放大 DIV 长度（默认为 200）   
+        yzoom: 450, //设置放大 DIV 高度（默认为 200）   
+        offset: 10, //设置放大 DIV 偏移（默认为 10）   
+        position: "right", //设置放大 DIV 的位置（默认为右边）   
+         preload:1,   
+        lens:false   
+    });   
+    });   
+    
+});
+</script>
+
+<div class="effective_div">
+    <div class="sto_detail_content">
+        <div class="sto_det_top">
+            <ul>
+                <li><a href="{:U('Index/index')}">首页&gt;</a></li>
+                <li><a href="#"><?php echo $list['name']?></a></li>
+              
+            </ul>
+        </div>
+
+        <div class="sto_dte_con_show">
+            <div class="detail_con_show_left">
+                
+             <h3>相关藏品</h3>
+                <ul>
+
+                <?php if(!empty($xincang)):?>
+                    <?php foreach($xincang as $cang):?>
+                    
+                    <li>
+                        <div class="deat_li">
+                            <p><?php echo $cang['shu'];?></p>
+                            <span><?php echo $cang['name'];?></span>
+                        </div>
+                        <dl class="deat_dl">
+                        <a href="{:U('Index/xgoods',array('id'=>$cang['id']))}">
+                            <dt><img style="height:61px;width:61px;" src="__ROOT__/Uploads/<?php echo  getonepicture($cang['id']);?>" /></dt>
+                            <dd>
+                        </a>    
+                                <p>编号：<?php echo $cang['bianhao'];?></p>
+                                <strong><?php echo $cang['money'];?></strong>
+                            </dd>
+                        </dl>
+                    </li>
+
+
+                   <?php endforeach;?>
+               <?php endif;?>
+
+
+                </ul>
+            </div>
+
+
+
+
+            <div class="deatil_con_right"><span></span>
+                <div class="detail_con_top">
+
+
+                    <div class="det_con_top_left">
+                        <div class="detail_top_left_changes">
+                            <div class="detail_imgs_l ShowPictureBox">
+
+                           
+                           <!--         
+                            <a href="__ROOT__/Uploads/<?php echo dadada(getonepicture($list['id'])) ;?>"> -->
+
+                             <!--
+                           <a id="jqzoomi" class="jqzoom" href="/Uploads/<?php echo dadada(getonepicture($list['id'])) ?>" style="" title=" ">     
+                            <img  id="lli" style="height:443px;width:443px;" src="__ROOT__/Uploads/<?php echo reurr(getonepicture($list['id'])) ?>" />
+
+                            </a>   -->
+
+                                <!-- rel="__ROOT__/Uploads/<?php echo dadada(getonepicture($list['id'])) ;?>" src="__ROOT__/Uploads/<?php echo dadada(getonepicture($list['id'])) ;?>" -->
+
+                              
+                              <!--  
+                            </a> -->
+
+
+                        <div  class="jqzoom">  
+                                    <img id="lli" style="height:443px;width:443px;" src="__ROOT__/Uploads/<?php echo reurr(getonepicture($list['id'])) ?>" jqimg="/Uploads/<?php echo dadada(getonepicture($list['id'])) ?>"/>  
+                        </div>  
+
+
+
+
+                            </div>
+
+                         
+
+
+                        </div>
+                        <ul class="detail_changes_ul tb-thumb"  id="thumblist">
+
+                        <script>                
+    function kk(obj){
+
+        $('#lli').attr('src',$(obj).attr('src'));
+        
+         $('#lli').attr('jqimg',$(obj).attr('rel'))
+
+        // alert($(obj).attr('rel'));
+
+        
+    }
+    </script>
+
+                            <?php if(!empty($images)):?>
+                                 <?php foreach($images as $cao):?>
+                            
+                            <li class="tb-selected">
+                             <a href="#">       
+                            <img style="height:99px;width:99px;"   onmousemove="kk(this)" src="__ROOT__/Uploads/<?php echo reurr($cao['filename']); ?>" rel="__ROOT__/Uploads/<?php echo dadada($cao['filename']); ?>"  />
+                            </a>
+
+                            <!--   mid="__ROOT__/Uploads/<?php echo dadada($cao['filename']); ?>" big="__ROOT__/Uploads/<?php echo dadada($cao['filename']); ?>"  -->
+
+                            </li>
+                              
+                                <?php endforeach;?>
+                            <?php endif;?>
+                        </ul>
+                    </div>
+
+
+                    <div class="det_con_top_right">
+                        <strong><?php echo $list['name']?></strong>
+                        <p>商品编号：<?php echo $list['bianhao']?></p>
+
+
+
+                        <div class="detail_table">
+                            <table width="555" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="255"><span>重量：</span><span><?php echo $list['weight']?>克</span></td>
+                                    <td width="300"><span>颜色：<?php echo $list['color']?></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="255"><span>皮色：</span><span><?php echo $list['pise']?></span></td>
+                                    <td width="300"><span>产地：</span><span><?php echo $list['place']?></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="255"><span>题材：</span><span><?php echo $list['ticai']?></span></td>
+                                    <td width="300"><span>尺寸：</span><span><?php echo $list['bigger']?></span></td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+                        <div class="detail_table2">
+                            <table width="578" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="578">
+                                        <span class="span1_deatail">库存：<?php echo $list['stock']?>块</span></p>
+                                        <span>点击：<?php echo $list['shu']?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>市场价：￥<?php echo $list['smoney']?></span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>全国统一价：<span>￥<?php echo $list['money']?></span></strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>商品所在地：</span>
+                                        <span><input name="" type="text" value="<?php echo $list['splace']?>" class="span_text" /></span>
+                                        <span>有货</span>     
+                                    </td>
+                                </tr>
+                           
+                                <tr>
+                                    <td>
+                                        <span class="span_img1"> <a href="{:U('Shop/index',array('id'=>$list['id']))}"><input name="" type="image" src="__PUBLIC__/imgaes/store_detail_20.jpg" /></a> </span>
+
+                                        <span><a href="{:U('Shop/index',array('id'=>$list['id']))}"><input class="gowujia" name="" type="image" src="__PUBLIC__/imgaes/store_detail_23.jpg" /></a></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+                        <div class="det_top_right_ul">
+                            <h3 class="detail_p1">赠送服务：</h3>
+                            <ul>
+                                <li>精美礼盒包装</li>
+                                <li>权威签定证书</li>
+                                <li>终身免费保养</li>
+                            </ul>
+                        </div>
+
+                        <div class="det_top_right_bot_ul">
+                            <h3 class="detail_p1">支付方式：</h3>
+                            <ul>
+                                <li><a href="#"><img src="__PUBLIC__/imgaes/store_detail_32.jpg" /></a></li>
+
+                                <!--
+                                <li><a href="#"><img src="__PUBLIC__/imgaes/store_detail_34.jpg" /></a></li>
+                                <li><a href="#"><img src="__PUBLIC__/imgaes/store_detail_36.jpg" /></a></li> -->
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                
+
+
+                <div class="deatil_con_bot">
+
+
+                    <div class="dea_con_bot_top">
+                        <ul class="tabs" id="tabs">
+                            <li style="cursor:pointer;"  class="">商品详情</li>
+                            <li style="cursor:pointer;"  class="">网友评论（<?php echo count($pinlu)?>）</li>
+                            <li style="cursor:pointer;"  class="">信誉担保</li>
+                            <li style="cursor:pointer;"  class="">支付帮助</li>
+                            <li style="cursor:pointer;"  class="">服务条款</li>
+                            <li style="cursor:pointer;"  class="">配送信息</li>
+                        </ul>
+                    </div>
+
+                    <!--联系我们-->
+            
+                    <!--什么-->
+                    <ul class="tab_conbox" id="tab_conbox">
+                    <li style="display: none;" class="tab_con">
+
+                                                <!--商品详情-->
+                    <div class="shopping_con">
+                        <div class="tou_dea_top">
+                          <p>商品详情</p>
+                        </div>
+                        <div class="shopping_dea_con">
+                                                      <table width="597">
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>商品状态</h5></td>
+                                <td><p><?php if($list['status']==0){echo '正常';}else{ echo '下架';}?></p></td>
+                              </tr>
+                          
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>商品重量</h5></td>
+                                <td><p><?php echo $list['weight']?>克</p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>题材</h5></td>
+                                <td><p><?php echo $list['ticai']?></p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>颜色</h5></td>
+                                <td><p><?php echo $list['color']?></p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>尺寸</h5></td>
+                                <td><p><?php echo $list['bigger']?></p></td>
+                              </tr>
+                         
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>存货地</h5></td>
+                                <td><p><?php echo $list['splace']?></p></td>
+                              </tr>
+                   
+                                <td width="90" bgcolor="#eeeeee"><h5>原料产地</h5></td>
+                                <td><p><?php echo $list['place']?></p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>瑕疵外伤</h5></td>
+                                <td><p>无</p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>商品包装</h5></td>
+                                <td><p>精美包装</p></td>
+                              </tr>
+                              <tr>
+                                <td width="90" bgcolor="#eeeeee"><h5>商品简介</h5></td>
+                                <td><p class="td_p">尺寸：<?php echo $list['bigger']?><br />重量：<?php echo $list['weight']?>g</p></td>
+                              </tr>
+                            </table>
+                        
+                            <div class="shop_img">
+                            <img style="height:338px;width:338px;" src="__ROOT__ /Uploads/<?php echo  reurrrr(getonepicture($list['id']));?>" />
+
+                            </div>
+                        </div>
+
+                       
+                    </div>
+
+
+
+
+                    <!--商品实拍-->
+                    <div class="shop_ship">
+
+                    
+                      <div class="tou_dea_top"><p>商品实拍</p></div>
+                      <?php if(!empty($llls)):?>
+                    <?php foreach($llls as $val):?>
+                      <p class="shop_img_show"><img style="height:600px;width:1000px;" src="__ROOT__/Uploads/<?php echo  spai($val['filename']) ;?>" /></p>
+                    <?php endforeach;?>
+
+            <?php endif; ?>
+
+                    
+                    </div>
+
+ 
+
+
+
+
+                        </li>
+                            
+                        <li style="display: none;" class="tab_con">
+                            
+                                        <!--网友评论-->
+                    <div class="friends">
+                      <div class="tou_dea_top"><p>网友评论</p></div>
+                      <div class="fri_top_dl">
+                          <dl>
+                              <dt>查看评论</dt>
+                                <dd>（共<?php echo count($pinlu)?>条评论）</dd>
+                  
+                            </dl>
+                        </div>
+                        <p class="sop_pinlun">
+
+                            <?php if(!empty($pinlu)): ?>
+                                <?php foreach($pinlu as $val):?>
+                                <div><h4><?php   getname($val['user_id'])?></h4>
+                                   <?php echo date('Y-m-d',$val['created'])?>
+
+                             
+                                </br>
+                                 <h5><?php echo $val['content']?></h5>
+
+                                </div>
+                             <?php endforeach;?>           
+                            <?php endif;?>                                                 
+
+                           
+                           
+                        </p>
+                   
+
+                        <div class="shop_pages"><?php echo $page?></div>
+
+                        <div class="shop_pinglun">
+                          <div class="pinglun_con">
+                              <p> 我要评论：</p>
+                                <textarea name="content" cols="" rows="" class="pinglun_text"></textarea>
+                            </div>
+                            <input class="goodsid" type="hidden" value="<?php echo $list['id']?>">
+                            <div class="pl_btn">
+                              <p>验证码：</p>
+                                <dl>
+                                  <dt><input name="code" type="text" class="p_btn_text" /></dt>
+                                    <dd><span>
+                                    <img style="height:20px;width:70px;" src="{:U('/Home/Verify/code')}" id="codeClick" class="pass-verifyCode" onClick="this.src=this.src+'?'+Math.random()"></span>
+
+                                    </dd>
+                                </dl>
+                                <div class="btn_pl"><input name="" class="dianji" type="image" src="__PUBLIC__/imgaes/store_detail_63.jpg" /></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                        
+                        </li>
+                    
+                        <li style="display: list-item;" class="tab_con">
+                        <img  src="__PUBLIC__/imgaes/xydb.jpg" />
+
+                        2223213
+
+                        </li>
+                    
+                        <li style="display: none;" class="tab_con">
+                            765757657576757657575
+                        </li>
+
+                         <li style="display: none;" class="tab_con">
+                            111111111
+                        </li>
+
+                         <li style="display: none;" class="tab_con">
+                            2222222222
+                        </li>
+                    </ul>   
+
+                                    <!--你可能感兴趣-->
+                   
+            <div class="xingqu">
+                        <div class="tou_dea_top"><p>你可能感兴趣</p></div>
+                       
+                        <div class="xingqu_top_ul">
+                          
+                            <ul class="tabp" id="tabp" >
+                                <li>浏览记录</li>
+                                <li>黄杨洪玉雕</li>
+                                <li>同类商品</li>
+                                <li>特价促销</li>
+                            </ul>  
+                        </div>  
+
+         <div class="xingqu_dl">
+                 
+                    
+              <ul class="xingqu_ul2" id="xingqu_ul2">
+
+               <li style="display: none;" >
+
+                 <?php if(!empty($cxincang)):?>
+                    <?php foreach($cxincang as $xcang):?>
+
+                                <div>
+                                    <a href="{:U('Index/xgoods',array('id'=>$xcang['id']))}"><img style="height:159px;width:188px;" src="__ROOT__/Uploads/<?php echo  reurl(getonepicture($xcang['id']));?>" /></a>
+                                    <a href="#" class="imga_a"><?php echo $xcang['name'] ?><br>¥<?php echo $xcang['money'] ?></a>
+                               </div>
+
+                            
+                       <?php endforeach;?>  
+                   <?php endif;?>
+                    </li>
+
+
+                    <li style="display: none;" >
+                    
+                <?php if(!empty($mama)):?>
+                    <?php foreach($mama as $xcang):?>
+
+                                <div>
+                                    <a href="{:U('Index/xgoods',array('id'=>$xcang['id']))}"><img style="height:159px;width:188px;" src="__ROOT__/Uploads/<?php echo  reurl(getonepicture($xcang['id']));?>" /></a>
+                                    <a href="#" class="imga_a"><?php echo $xcang['name'] ?><br>¥<?php echo $xcang['money'] ?></a>
+                               </div>
+
+                            
+                       <?php endforeach;?>  
+                   <?php endif;?>
+
+                           
+                    </li>
+
+
+                                        <li style="display: none;" >
+                    
+                <?php if(!empty($mame)):?>
+                    <?php foreach($mame as $xicang):?>
+
+                                <div>
+                                    <a href="{:U('Index/xgoods',array('id'=>$xcang['id']))}"><img style="height:159px;width:188px;" src="__ROOT__/Uploads/<?php echo  reurl(getonepicture($xicang['id']));?>" /></a>
+                                    <a href="#" class="imga_a"><?php echo $xicang['name'] ?><br>¥<?php echo $xicang['money'] ?></a>
+                               </div>
+
+                            
+                       <?php endforeach;?>  
+                   <?php endif;?>
+
+                           
+                    </li>
+
+
+                                        <li style="display: none;" >
+                    
+                <?php if(!empty($canjjg)):?>
+                    <?php foreach($canjjg as $xcang):?>
+
+                                <div>
+                                    <a href="{:U('Index/xgoods',array('id'=>$xcang['id']))}"><img style="height:159px;width:188px;" src="__ROOT__/Uploads/<?php echo  getonepicture($xcang['id']);?>" /></a>
+                                    <a href="#" class="imga_a"><?php echo $xcang['name'] ?><br>¥<?php echo $xcang['money'] ?></a>
+                               </div>
+
+                       <?php endforeach;?>  
+                   <?php endif;?>
+
+                           
+                    </li>
+
+
+                  </ul>            
+
+                
+
+      
+            </div> 
+
+
+        </div>          
+
+
+
+                    
+     </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

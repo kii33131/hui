@@ -1,0 +1,138 @@
+<script>
+    
+     $(function(){
+
+        var id =$('.didan').val();
+
+        $('.radio1').click(function(){
+
+            $.post('__URL__/editpay',{'id':id,'pay':1},function(date){
+
+                 //alert(date);
+            })
+
+
+        })
+
+
+
+        $('.radio2').click(function(){
+
+            $.post('__URL__/editpay',{'id':id,'pay':2},function(date){
+               // alert(date);
+            })
+
+
+        })
+
+
+        $('.radio3').click(function(){
+
+            $.post('__URL__/editpay',{'id':id,'pay':3},function(date){
+                //alert(date);
+            })
+
+
+        })
+       
+       
+
+     })
+
+
+</script>
+
+<div class="effective_div">
+    <div class="cart3_content">
+        <ul class="cart3_con_ul">
+            <li>
+                <div class="top_li">
+                    <p class="top_li_p1">商品列表</p>
+                    <p class="top_li_p2"></p>
+                </div>
+                <div class="cart3_table">
+                    <table width="1042" bgcolor="#fff" cellpadding="0" cellspacing="0">
+                        <tr class="last3_tr">
+                            <th width="545">订单</th>
+                            
+                          
+                            <th width="123">小计</th>
+                        </tr>
+
+               
+
+                   
+                        <tr>
+                            <td width="545"><?php echo $list['danhao']?></td>
+                            <td width="140">￥<?php echo $num?>元</td>
+                          
+                        </tr>
+                 
+            
+                    </table>
+                </div>
+            </li>
+          
+            
+
+            <form action="{:U('Pay/doalipay')}" method="post">
+            <input class="didan" type="hidden" name="didan" value="<?php echo $list['id']?>">
+            <input class="didan" type="hidden" name="trade_no" value="<?php echo $list['danhao']?>">
+            
+             <input class="didan" type="hidden" name="ordtotal_fee" value="<?php echo $num ?>">
+
+            <input class="didan" type="hidden" name="ordsubject" value="商品订单">
+
+            <li>
+
+          
+                <div class="top_li">
+                    <p class="top_li_p1">付款方式</p>
+                    <p class="top_li_p2"></p>
+                </div>
+                   
+              <div class="cart3_table2">
+                    <table bgcolor="#fff" cellpadding="0" cellspacing="0" width="1042" class="table4">
+                        <tr class="cart_padding">
+                            <th width="260">名称</th>
+                            <th width="782">描述</th>
+                        </tr>
+                        <!--  货到付款暂时注释
+                        <tr>
+                            <td width="260"><p class="cart3_p1"><input onFocus="pay(<?php echo $list['id']?>);" name="pay" type="radio"  value="1"  class="td_radio radio1" /></p><p class="cart3_p2"   >货到付款</p></td>
+                            <td width="778">当面付款后验货</td>
+                        </tr>  -->
+
+                        <tr>
+                            <td width="260"><p class="cart3_p1"><input name="pay" type="radio" value="2"  class="td_radio radio2"/></p><p class="cart3_p2">支付宝</p></td>
+                            <td width="778">支付宝支付</td>
+                        </tr>
+
+                        <!--
+                        <tr>
+                            <td width="260"><p class="cart3_p1"><input name="pay" type="radio" value="3"  class="td_radio radio3"/></p><p class="cart3_p2">网银在线</p></td>
+                            <td width="778">网银支付</td>
+                        </tr> -->
+                    </table>
+                </div>  
+                  
+
+            </li>
+        
+            <li>
+                <div class="top_li">
+                    <p class="top_li_p1">总计</p>
+                    
+                </div>
+                <div class="cart3_table2 cart3_p_bg1">
+                    <p class="price_cart">商品总价：<span>￥<?php echo $num; ?></span></p>
+                    <div class="clear"></div>
+                    <p class="price_cart2">应付款金额：<span>￥<?php echo $num; ?></span></p>
+                </div>
+                <div class="cart3_bottom3"><input name="" type="image" src="__PUBLIC__/imgaes/Cart3_03.jpg" /></div>
+            </li>
+        </form>
+
+        </ul>
+    </div>
+</div>

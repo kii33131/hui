@@ -1,0 +1,756 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人中心——微游记发布框</title>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+<script src="__PUBLIC__/js/style.js"></script>
+<script type="text/javascript">
+<!--
+var timeout         = 500;
+var closetimer      = 0;
+var ddmenuitem      = 0;
+// open hidden layer
+function mopen(id)
+{   
+    // cancel close timer
+    mcancelclosetime();
+    // close old layer
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+    // get new layer and show it
+    ddmenuitem = document.getElementById(id);
+    ddmenuitem.style.visibility = 'visible';
+}
+// close showed layer
+function mclose()
+{
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+// go close timer
+function mclosetime()
+{
+    closetimer = window.setTimeout(mclose, timeout);
+}
+// cancel close timer
+function mcancelclosetime()
+{
+    if(closetimer)
+    {
+        window.clearTimeout(closetimer);
+        closetimer = null;
+    }
+}
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>
+</head>
+<body style="background-color:#fff;">
+    <div id='overs'></div>
+    <div id="alert">
+        <div class="login">
+            <h4><span id="close">关闭</span></h4>
+            <div class="clear"></div>
+            <strong class="login_title">登录逍遥游</strong>
+            <div class="login_div">
+                <table cellpadding="1">
+                  <tr>
+                    <td width="53px" height="32px">登录名</td>
+                    <td width="226px" height="32px"><input name="" type="text" class="login_text" /></td>
+                  </tr>
+                  <tr>
+                    <td width="53px" height="32px">密码</td>
+                    <td width="226px" height="32px"><input name="" type="password" class="login_text" /></td>
+                  </tr>
+                </table>
+            </div>
+            <dl class="login_dl">
+                <dt><a href="#"><img src="__PUBLIC__/images/login_03.jpg" /></a></dt>
+                <dd><a href="#">忘记密码了吗啊？</a></dd>
+            </dl>
+            <dl class="login_dl1">
+                <dt>还不是逍遥会员吗啊？</dt>
+                <dd><a href="#">忘记密码了吗啊？</a></dd>
+            </dl>
+            <dl class="login_dl2">
+                <dt>使用合作网账号登录</dt>
+                <dd><a href="#"><img src="__PUBLIC__/images/login_07.jpg" />QQ</a></dd>
+                <dd><a href="#"><img src="__PUBLIC__/images/trip_88.jpg" />腾讯微博</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/login_09.jpg" />百度</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/trip_82.jpg" />新浪微博</a></dd>
+                <dd><a href="a"><img src="__PUBLIC__/images/trip_90.jpg" />开心网</a></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="public_top_div securitysettings_top_div">
+        <div class="public_daohang securitysettings_daohang_bgc">
+            <div class="public_left_ul">
+                <div class="list_logo"><img src="__PUBLIC__/images/trip.png" /></div>
+                <ul>
+                    <li class="current"><a href="index.html">首页</a></li>
+                    <li class="mene">
+                      <a href="#" onmouseover="mopen('m')" onmouseout="mclosetime()">个人主页<img src="__PUBLIC__/images/index_o6.png" class="down_logo"/></a>
+                  <div class="securitysettings_xl" id="m" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                            <a href="#">公司简介</a>
+                            <a href="#">企业文化</a>
+                            <a href="#">发展历程</a>
+                            <a href="#">荣誉资质</a>
+                      </div>
+                    </li>
+                    <li><a href="#">好友</a></li>
+                </ul>
+            </div>
+            <div class="public_right_ul securitysettings_right_ul">
+                <ul>
+                    <li><a href="#"><img src="__PUBLIC__/images/personalsettings_03.jpg" class="img_s" /><span class="nickname">漆黑之牙....</span></a></li>
+                    <li><a href="#" class="exit">&nbsp;|&nbsp;退出</a></li>
+                    <li class="set_li_list"><a href="#">发布</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--内容区的头部-->
+    <div class="clear"></div>
+<div class="securitysettings_content_top">
+        <div class="effective_div">
+            <div class="securitysettings_1242">
+                <div class="img_l"><img src="__PUBLIC__/images/personalsettings_11.jpg" /></div>
+                <div class="securitysettings_content_top_right">
+                    <dl>
+                        <dt>漆黑之牙</dt>
+                        <dd><img src="__PUBLIC__/images/gold_1.jpg" />120</dd>
+                        <dd>游记达人</dd>
+                        <dd>故事大神</dd>
+                    </dl>
+                    <p class="P_content">
+                        个性签名：我的新鲜事澳大利亚有一只叫Didga的喵星人，酷爱滑板，而且耍得还真不赖！主人记录下这些酷拽的瞬间，太逆天了好么！
+我的新鲜事澳大利亚有一只叫Didga的喵星人，酷爱滑板，而且耍得还真不赖！主人记录下这些酷拽的瞬间，太逆天了好么！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中间内容区-->
+    <div class="effective_div">
+        <div class="securitysettings_content">
+            <div class="securitysettings_content_left">
+                <h1 class="h1_title">我的空间</h1>
+                <ul class="securitysettings_content_left_ul">
+                    <li><a href="{:U('Tra/news')}">新鲜事</a></li>
+                    <li><a href="imgasetting.html">微游记</a></li>
+                    <li><a href="micro.html">微故事</a></li>
+                    <li><a href="spit.html">吐糟</a></li>
+                    <li><a href="question.html">我的问题</a></li>
+                    <li><a href="honor.html">与我相关</a></li>
+                    <li><a href="remind.html">提醒</a></li>
+                    <li><a href="collection.html">收藏</a></li>
+                </ul>
+                <div class="pay_us">
+                    <p class="pay_us_p">关注我们</p>
+                    <div class="pay_us_dl">
+                        <dl class="dl_pay">
+                            <dt><img src="__PUBLIC__/images/collectioncenter_collection_47.jpg" /></dt>
+                            <dd>新浪微博</dd>
+                        </dl>
+                        <dl>
+                            <dt><img src="__PUBLIC__/images/collectioncenter_collection_49.jpg" /></dt>
+                            <dd>新浪微博</dd>
+                        </dl>
+                        <dl>
+                            <dt><img src="__PUBLIC__/images/collectioncenter_collection_51.jpg" /></dt>
+                            <dd>新浪微博</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="pay_us_img">
+                    <ul pay_us_img_ul>
+                        <li class="pay_us_img_li">
+                            <a href="#"><img src="__PUBLIC__/images/trip_51.jpg" /></a>
+                            <p class="li_position"></p>
+                            <p class="li_positon_p">澳大利亚有一只喵星人</p>
+                        </li>
+                        <li class="pay_us_img_li">
+                            <a href="#"><img src="__PUBLIC__/images/trip_65.jpg" /></a>
+                            <p class="li_position"></p>
+                            <p class="li_positon_p">澳大利亚有一只喵星人</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pay_left_bottom">
+                
+                </div>
+            </div>
+            
+           {__CONTENT__}
+
+        </div>
+    </div>
+     
+        
+    <!--最底部-->
+    <div class="public_bottom"> 
+        <div class="public_div">
+            <div class="public_bottom_left">
+                <img src="__PUBLIC__/images/trip_01.jpg" />
+            </div>
+            <div class="public_bottom_center">
+                <ul>
+                    <li>地址：上海北京东路433号2007座（南京东路步行街旁）备案编号： 沪ICP备12024896号-1</li>
+                    <li>逍遥游 © 2013 Gotoway.COM</li>
+                </ul>
+            </div>
+            <div class="public_bottom_right">
+                <dl>
+                    <dt>分享：</dt>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_82.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_84.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_86.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_88.jpg" /></a></dd>
+                    <dd><a href="#"><img src="__PUBLIC__/images/trip_90.jpg" /></a></dd>
+                </dl>
+            </div>
+        </div>
+     </div> 
+     <!--底部隐藏和显示-->
+    <div class="public_rel">
+        <div class="personal_abs">
+            <div class="public_bottom_up bottom_id">
+                <ul>
+                    <li><a href="#"><img src="__PUBLIC__/images/personal_03.jpg" /></a></li>
+                    <li><a href="#"><img src="__PUBLIC__/images/personal_06.jpg" /></a></li>
+                    <li><a href="#"><img src="__PUBLIC__/images/personal_08.jpg" /></a></li>
+                </ul>
+            </div>
+            <!--<div class="clear"></div>
+            <div class="top">
+                <a href="#" onclick="pageScroll()"><img src="__PUBLIC__/images/index_107.jpg" /></a>
+            </div>-->
+            <div class="clear"></div>
+            <div class="public_bottom_list bottom_list_personal_bgr"><img src="__PUBLIC__/images/index1.png" /></div>
+            <div class="public_bottom_ul bottom_id bottom_ul_personal_bgr">
+                <ul>
+                    <li><a id="buts1">提问</a></li>
+                    <li><a onclick="showhidediv('solveid')">待解决</a></li>
+                    <li><a onclick="showhidediv('solveid')">已解决</a></li>
+                    <li><a id="buts2">与我相关的问题</a></li>
+                    <li><a href="#"><img src="__PUBLIC__/images/suona.png" class="suona"/></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!--待解决-->
+        <div class="effective_solved_div" id="solveid">
+            <div class="solved_div" >
+                <div class="solved_abs" onclick="showhidediv('solveid')">关闭</div>
+                <div id="tab2">
+                    <ul>
+                       <li onclick="solved(2,0)" class="now">待解决</li>
+                       <li onclick="solved(2,1)">以解决</li>
+                    </ul>
+                 </div>
+                 <div id="tablist2">
+                     <div class="tablist tablist_block">
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                     </div>
+                     <div class="tablist">
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                        <dl class="tablist_dl">
+                            <dt><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dt>
+                            <dd><p class="tab_p">10</p><span class="tab_span"> 我之前白银496胜点定级赛要多胜才能进黄
+
+金</span></dd>
+                        </dl>
+                     </div>
+                 </div>
+                 <!--搜索框-->
+                 <div class="solved_serach">
+                    <div class="solved_search_div">
+                        <input name="" type="text" class="sol_sea_text" />
+                        <input name="" type="image" src="__PUBLIC__/images/solved_07.jpg" class="sol_image" />
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <!--提问弹出框-->
+        <div id="overs1"></div>
+        <div class="questionbox_div" id="alert1">
+          <div class="ques_top">
+                <div class="ac_top_left">
+                  <a href="#"><img src="__PUBLIC__/images/accept_03.jpg" /></a>
+                  <span>采纳回答者</span>
+                </div>
+                <div class="ac_top_right" id="close1"><img src="__PUBLIC__/images/accept_05.jpg" /></div>
+            </div>
+            <div class="ques_cen">
+              <textarea name="textarea" cols="" rows="" class="ques_text">在这里输入要提交的问题</textarea>
+            </div>
+            <div class="ques_bottom">
+                <p class="p_bot1">
+                    <span>悬赏</span>
+                    <span><input name="" type="text" class="span_text" /></span>
+                    <div class="ques_span1">
+                        <p class="ques_image1" ><input name="" type="image" src="__PUBLIC__/images/questionbox_01.jpg" 
+
+/></p>
+                        <p class="ques_imgae2" ><input name="" type="image" 
+
+src="__PUBLIC__/images/questionbox_10.jpg"/></p>
+                    </div>
+                </p>
+                <p class="p_bot2">
+                    <span class="p_bot2_span1">可用</span>
+                    <span><img src="__PUBLIC__/images/memberlist_19.jpg" /></span>
+                  <span class="p_bot2_span2">120</span>
+                </p>
+                <p class="p_bot3">
+                    <select name="" class="sel_ques">
+                      <option>地点</option>
+                    </select>
+                </p>
+                <p class="p_bot4">
+                    <input name="" type="text"  class="bot4_text"/>
+                </p>
+            </div>
+            <div class="btn_img"><input name="" type="image" src="__PUBLIC__/images/questionbox_07.jpg" /></div>
+        </div>
+        
+        <!--与我相关弹出框-->
+        <div id="overs2"></div>
+        <div class="memberlist_div" id="alert2">
+            <!--头部效果-->
+            <div class="memlt_top">
+                <dl class="memlt_top_dl">
+                    <dt><img src="__PUBLIC__/images/memberlist_03.jpg" /></dt>
+                    <dd>逍遥游问题综合区</dd>
+                </dl>
+                <p class="memlt_top_p" id="close2"><img src="__PUBLIC__/images/memberlist_06.jpg" /></p>
+            </div>
+            <!--中间内容区效果-->
+            <div class="memlt_cen_con">
+                <!--中间内容左边效果-->
+                <div class="memlt_cne_con_left">
+                    <!--以列表显示信息-->
+                    <ul class="mem_cen_con_ul">
+                        <li>
+                            <p class="mem_con_li_p">
+                                <span>10</span>
+                                <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                <strong><img src="__PUBLIC__/images/memlist_23.jpg" /></strong>
+                            </p>
+                            <!--隐藏详细信息，单击显示-->
+                            <div class="mem_li_con">
+                                <p class="mem_con_li_p mem_con_li_p1">
+                                    <span>10</span>
+                                    <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                    <strong><img src="__PUBLIC__/images/memlist_26.jpg" /></strong>
+                                </p>
+                                <ul class="mem_ul2">
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        <p class="mem_ul2_p2"><a href="#">采纳</a><a href="#">回复</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mem_con_li_p">
+                                <span>10</span>
+                                <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                <strong><img src="__PUBLIC__/images/memlist_23.jpg" /></strong>
+                            </p>
+                            <!--隐藏详细信息，单击显示-->
+                            <div class="mem_li_con">
+                                <p class="mem_con_li_p mem_con_li_p1">
+                                    <span>10</span>
+                                    <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                    <strong><img src="__PUBLIC__/images/memlist_26.jpg" /></strong>
+                                </p>
+                                <ul class="mem_ul2">
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        <p class="mem_ul2_p2"><a href="#">采纳</a><a href="#">回复</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mem_con_li_p">
+                                <span>10</span>
+                                <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                <strong><img src="__PUBLIC__/images/memlist_23.jpg" /></strong>
+                            </p>
+                            <!--隐藏详细信息，单击显示-->
+                            <div class="mem_li_con">
+                                <p class="mem_con_li_p mem_con_li_p1">
+                                    <span>10</span>
+                                    <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                    <strong><img src="__PUBLIC__/images/memlist_26.jpg" /></strong>
+                                </p>
+                                <ul class="mem_ul2">
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        <p class="mem_ul2_p2"><a href="#">采纳</a><a href="#">回复</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mem_con_li_p">
+                                <span>10</span>
+                                <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                <strong><img src="__PUBLIC__/images/memlist_23.jpg" /></strong>
+                            </p>
+                            <!--隐藏详细信息，单击显示-->
+                            <div class="mem_li_con">
+                                <p class="mem_con_li_p mem_con_li_p1">
+                                    <span>10</span>
+                                    <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                    <strong><img src="__PUBLIC__/images/memlist_26.jpg" /></strong>
+                                </p>
+                                <ul class="mem_ul2">
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        <p class="mem_ul2_p2"><a href="#">采纳</a><a href="#">回复</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="mem_con_li_p">
+                                <span>10</span>
+                                <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                <strong><img src="__PUBLIC__/images/memlist_23.jpg" /></strong>
+                            </p>
+                            <!--隐藏详细信息，单击显示-->
+                            <div class="mem_li_con" style="display:block;">
+                                <p class="mem_con_li_p mem_con_li_p1">
+                                    <span>10</span>
+                                    <span>我之前白银496胜点定级赛要多胜才能进黄金才能进黄金..</span>
+                                    <strong><img src="__PUBLIC__/images/memlist_26.jpg" /></strong>
+                                </p>
+                                <ul class="mem_ul2">
+                                    <li>
+                                        <p class="mem_ul2_p1">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        <p class="mem_ul2_p2"><a id="buts3">采纳</a><a href="#">回复</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                        
+                                    </li>
+                                    <li>
+                                        <p class="mem_ul2_p1 ul2_p1_rel">
+                                            <strong>游客，游客[16:47:56]</strong>
+                                            <span>那你估计上不了黄金</span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--提问和发送信息-->
+                    <div class="mem_con_left_bot">
+                        <div class="con_left_bot_top">
+                            <dl class="con_left_dl">
+                                <dt><img src="__PUBLIC__/images/memberlist_27.jpg" /></dt>
+                                <dd>表情</dd>
+                            </dl>
+                            <dl class="con_left_dl">
+                                <dt><img src="__PUBLIC__/images/memberlist_29.jpg" /></dt>
+                                <dd>表情</dd>
+                            </dl>
+                        </div>
+                        <div class="mem_con_input"><textarea name="" cols="" rows="" 
+
+class="texarea_mem"></textarea></div>
+                    </div>
+                </div>
+                <!--中间内容右边效果-->
+                <div class="memlt_cne_con_right">
+                    <!--内容块右边头部的效果-->
+                    <div class="cen_con_right_top">
+                        <p class="list_top">成员（385/780）</p> 
+                        <ul class="list_top_ul">
+                            <li class="list_top_img"><img src="__PUBLIC__/images/memberlist_14.jpg" /></li>
+                            <li><img src="__PUBLIC__/images/memberlist_11.jpg" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                    <div class="list_right">
+                        <ul class="list_right_ul">
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                            <li class="list_right_li">
+                                <a>[游客]</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list_right" style="display:none;" id="2">
+                        <ul class="list_right_ul">
+                            <li class="question_list_li">
+                                <a class="IDONTKNOW"><span class="que_span1">10</span><span>黑色玫瑰有谁打定
+
+</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!--中间内容底部效果-->
+            <div class="mem_con_bot">
+                <div class="mem_con_bot_div">
+                    <p class="con_bot_p1"><input name="" type="image" src="__PUBLIC__/images/memberlist_36.jpg" /></p>
+                    <p class="con_bot_p2"><input name="" type="image" src="__PUBLIC__/images/memberlist_38.jpg" /></p>
+                    <p class="con_bot_p3"><input name="" type="image" src="__PUBLIC__/images/memberlist_40.jpg" /></p>
+                </div>
+            </div>
+        </div>
+        <!--采纳答案弹出框-->
+        <div id="overs3"></div>
+        <div class="accept" id="alert3">
+        <div class="accept_top">
+            <div class="ac_top_left">
+                <a href="#"><img src="__PUBLIC__/images/accept_03.jpg" /></a>
+                <span>采纳回答者</span>
+            </div>
+            <div class="ac_top_right" id="close3"><img src="__PUBLIC__/images/accept_05.jpg" /></div>
+            <div class="clear"></div>
+            <div class="ac_ul_div">
+                <ul class="ac_ul">
+                    <li>
+                        <div>
+                            <span><input name="" type="checkbox" value="" class="che_ace" /></span><span>仙心
+
+已坚决</span>
+                        </div>
+                        <p>
+                        分配<span><input name="" type="text" class="ac_text" /></span>金币</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span><input name="" type="checkbox" value="" class="che_ace" /></span><span>仙心
+
+已坚决</span>
+                        </div>
+                        <p>
+                        分配<span><input name="" type="text" class="ac_text" /></span>金币</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span><input name="" type="checkbox" value="" class="che_ace" /></span><span>仙心
+
+已坚决</span>
+                        </div>
+                        <p>
+                        分配<span><input name="" type="text" class="ac_text" /></span>金币</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span><input name="" type="checkbox" value="" class="che_ace" /></span><span>仙心
+
+已坚决</span>
+                        </div>
+                        <p>
+                        分配<span><input name="" type="text" class="ac_text" /></span>金币</p>
+                    </li>
+                    <li>
+                        <div>
+                            <span><input name="" type="checkbox" value="" class="che_ace" /></span><span>仙心
+
+已坚决</span>
+                        </div>
+                        <p>
+                        分配<span><input name="" type="text" class="ac_text" /></span>金币</p>
+                    </li>
+                </ul>
+                <div class="ac_bot">
+                    <p><img src="__PUBLIC__/images/accept_10.jpg" /><span>当前已分配10金币，共65人</span></p>
+                </div>
+            </div>
+            <div class="ace_btn_div">
+                <p><input name="" type="image" src="__PUBLIC__/images/accept_14.jpg" /></p>
+                <p><input name="" type="image" src="__PUBLIC__/images/accept_16.jpg" /></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

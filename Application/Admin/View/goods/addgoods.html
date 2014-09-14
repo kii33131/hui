@@ -1,0 +1,128 @@
+		<title>KindEditor PHP</title>
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+		<script type="text/javascript">
+		$(function(){
+		    //$(".registerform1").Validform();  //就这一行代码！;
+		        
+		    $(".registerform1").Validform({
+		        tiptype:2
+		    });
+		})
+      </script>
+
+
+      <script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '../php/upload_json.php',
+				fileManagerJson : '../php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+
+	<div class="header">
+		<h1 class="page-title">用户添加</h1>
+	</div>
+
+
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Goods/index')}">商品管理</a> <span class="divider">/</span></li>
+	    <li class="active">商品添加</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">    
+			<div class="well">
+				<form class="registerform1" name="example"  action="{:U('Goods/add')}" method="post"  >
+					<fieldset>
+						<?php if(!empty($list)):?>
+							<?php foreach($list as $arr):?>
+						<h3><?php echo $arr['title']?></h3>
+							<?php echo  $data = getCategoryB($arr['id']);?>
+							<?php endforeach ;?>
+						<?php endif;?>
+						<legend>商品添加</legend>
+
+
+						<h3>特价商品</h3>
+						<input type="checkbox"  name="teijia" value="1" class="input-xlarge" >
+
+						<h3>精品</h3>
+						<input type="checkbox"  name="hei" value="1" class="input-xlarge" >
+
+
+						<label>商品名</label>
+						<input type="text" datatype="*" name="name" value="" class="input-xlarge"  placeholder="请输入商品名称">
+					
+						<label>全国统一价</label>
+						<input type="text" datatype="n" name="money" value="" class="input-xlarge" placeholder="请输入全国统一价">
+
+						<label>市场价</label>
+						<input type="text" datatype="n" name="smoney" value="" class="input-xlarge" placeholder="请输入市场价">
+
+						<label>产地</label>
+						<input type="text" datatype="*" name="place" value="" class="input-xlarge" placeholder="请输入商品所在地">
+
+						<label>商品所在地</label>
+						<input type="text" datatype="*" name="splace" value="" class="input-xlarge" placeholder="请输入市场价">
+
+						<label>重量</label>
+						<input type="text" datatype="*" name="weight" value="" class="input-xlarge" placeholder="商品重量">
+
+						<label>皮色</label>
+						<input type="text" datatype="*" name="pise" value="" class="input-xlarge" placeholder="皮色">
+
+						<label>题材</label>
+						<input type="text" name="ticai" datatype="*" value="" class="input-xlarge" placeholder="题材">
+
+						<label>颜色</label>
+						<input type="text" name="color" datatype="*" value="" class="input-xlarge" placeholder="颜色">
+
+						<label>尺寸</label>
+						<input type="text" name="bigger" datatype="*" value="" class="input-xlarge" placeholder="尺寸">
+
+						<label>库存</label>
+						<input type="text" name="stock" datatype="n" value="" class="input-xlarge" placeholder="库存">
+
+						<label>证书编号</label>
+						<input type="text" name="bianhao"  value=" " class="input-xlarge" placeholder="证书编号">	
+
+						<label>商品描述</label>
+
+						 
+						<textarea  style="width:700px;height:200px;visibility:hidden;"   name="content"></textarea>
+
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 添 加 </button>
+						</div>
+					</fieldset>
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

@@ -1,0 +1,76 @@
+	<link rel="stylesheet" href="__PUBLIC__/themes/default/default.css" />
+	<link rel="stylesheet" href="__PUBLIC__/plugins/code/prettify.css" />
+	<script charset="utf-8" src="__PUBLIC__/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/plugins/code/prettify.js"></script>
+
+		<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '__PUBLIC__/plugins/code/prettify.css',
+				uploadJson : '__PUBLIC__/php/upload_json.php',
+				fileManagerJson : '__PUBLIC__/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+	<ul class="breadcrumb">
+	    <li><a href="#">首页</a> <span class="divider">/</span></li>
+	    <li><a href="{:U('Gongyi/index')}">关注管理</a> <span class="divider">/</span></li>
+	    <li class="active">关注查看</li>
+	</ul>
+
+	<div class="container-fluid">
+	    <div class="row-fluid">
+	            
+
+			<div class="well">
+				<form method="post" action="{:U('Gongyi/view')}">
+
+					<fieldset>
+						<legend>关注添加</legend>
+						<h2>标题</h2>
+						<input type="hidden" value="<?php echo $list['id']?>" name="id">
+						<input type="text" readonly  name="name" value="<?php echo $list['name']?>" class="input-xlarge" >
+						<h2>图片</h2>
+						<img style="height:109px;width:129px;" src="__ROOT__/Uploads/<?php echo $list['filename']?>" />
+
+						<h2>内容</h2>
+
+						 
+						<textarea style="width:700px;height:500px;visibility:hidden;"   name="content"><?php echo $list['content']?></textarea>
+
+				
+							
+						</div>
+
+						<div class="btn-toolbar">
+							<button class="btn btn-primary" type="submit"><i class="icon-save"></i> 修 改 </button>
+
+							
+						</div>
+					</fieldset>
+
+
+
+				</form>
+			</div>
+
+		</div>
+		<footer>
+		<hr>
+		<p class="pull-right">&copy;  <a href="" target="_blank">Pleasure</a></p>
+		</footer>
+	</div>

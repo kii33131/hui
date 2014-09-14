@@ -1,0 +1,304 @@
+
+<script>
+
+    function shu(i){
+
+        var ids = i;
+
+        $.post('__URL__/shu',{'goodsid':ids},function(date){
+
+
+        })
+
+    }
+
+    function tejia(){
+
+      if($('.yaya').val()==0){
+        $('.yaya').val('1');
+        $('.news').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'new'=>1,'teijia'=>1))}');
+
+        $('.moneys').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'money'=>1,'teijia'=>1))}');
+        $('.people').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'shu'=>1,'teijia'=>1))}');
+      }
+      else{
+
+        $('.yaya').val('0');
+        $('.news').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'new'=>1))}');
+        $('.moneys').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'money'=>1))}');
+        $('.people').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'shu'=>1))}');
+
+      }
+
+    }
+
+
+
+    function yishou(){
+
+      if($('.chacha').val()==0){
+        $('.chacha').val('1');
+        $('.news').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'new'=>1,'yisou'=>1))}');
+
+        $('.moneys').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'money'=>1,'yisou'=>1))}');
+        $('.people').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'shu'=>1,'yisou'=>1))}');
+      }
+      else{
+
+        $('.chacha').val('0');
+        $('.news').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'new'=>1))}');
+        $('.moneys').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'money'=>1))}');
+        $('.people').attr('href','{:U('Index/index',array('goods_id'=>$category_id,'shu'=>1))}');
+
+      }
+
+    }
+
+
+   /*
+    
+   function unk(i){
+
+
+    //alert($.this)
+
+
+        var oo=  window.location.href;
+
+       // var oo = '{:U('Index/index')}';
+
+       // alert(oo);
+       strs=oo.split('.html');
+     //alert(strs[0]);
+     //alert(strs);
+     if(strs[0]=='http://boruntang.gotoip3.com/index.php/Home/Index/index'){
+
+
+      $(".jji"+i).attr('href',strs[0]+'/goods_id/'+i);
+
+
+     }
+
+     else{
+
+      $(".jji"+i).attr('href',strs[0]+','+i);
+     }
+
+   }  */
+
+
+   $(function(){
+
+    var aaarr = $('.llioi').val();
+    
+    //alert($('.sto_con_cen a').html());
+    //var obj2 = aaarr.split(",");
+   //alert(obj2);
+
+ 	ssi = aaarr.split(",");
+ 	
+ 	for (i = 0; i <= ssi.length; i++)
+	{
+		$('.jji'+ssi[i]).removeClass('bbiu');
+		$('.jji'+ssi[i]).addClass('wocaioni');
+		
+	}
+
+	//alert('d');
+   })
+
+</script>
+
+<style>
+  .wocaioni{
+    color:#a80000;
+  }
+
+  .bbiu{
+
+  	 color:#333333;
+  }
+
+</style>
+
+<link href="__PUBLIC__/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/jquery.slideBox.min.js" type="text/javascript"></script>
+<script>
+jQuery(function($){
+  <!-- $('#demo1').slideBox(); -->
+  $('#demo2').slideBox({
+    direction : 'top',//left,top#方向
+    duration :1,//滚动持续时间，单位：秒
+    easing : 'linear',//swing,linear//滚动特效
+    delay : 5,//滚动延迟时间，单位：秒
+    startIndex : 1//初始焦点顺序
+  }); 
+  $('#demo3').slideBox({
+    duration : 1,//滚动持续时间，单位：秒
+    easing : 'linear',//swing,linear//滚动特效
+    delay : 5,//滚动延迟时间，单位：秒
+    hideClickBar : false,//不自动隐藏点选按键
+    clickBarRadius : 10
+  });
+   $('#demo4').slideBox({
+    hideBottomBar : true//隐藏底栏
+  }); 
+});
+</script>
+
+
+
+
+<!--banner-->
+
+<input class="llioi" type="hidden" value="<?php echo $cateidsse?>">
+<div class="store_banner">
+
+  
+<div id="demo3" class="slideBox">
+  <ul class="items">
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner1.jpg"></li>
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner2.jpg"></li>
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner1.jpg"></li>
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner2.jpg"></li>
+
+         <!--
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner3.jpg"></li>
+         <li><img width="100%" height="430" src="__PUBLIC__/imgaes/banner4.jpg"></li>  -->
+ 
+   
+<div class="clear"></div>
+ 
+    </ul>
+</div>
+
+</div>  
+
+
+
+  
+
+
+
+<!--内容区域-->
+<div class="clear"></div>
+<div class="new_eff" style="overflow:hidden; background:#f0f0f0;">
+<div class="store_content">
+	<div class="sto_con_top">
+   	  <div class="sto_con_top_left">商品筛选</div>
+      <div class="sto_con_top_right"><a href="{:U('Index/index')}">重置筛选条件</a></div>
+  </div>
+  <div class="sto_con_cen">
+    	<ul>
+            
+            <?php if(!empty($fenlei)):?>
+                <?php foreach($fenlei as $arr):?>
+       	  <li>
+            	<div class="sto_con_cen_div"><?php echo $arr['title']?></div>
+                <dl class="sto_con_cen_dl">
+                	<dd><a href="{:U('Index/index')}" class="curoust_a">全部</a></dd>
+                    <dd><?php echo getCategoryc($arr['id']);?></dd>
+               
+                </dl>
+            </li>
+            <?php endforeach;?>
+        <?php endif;?>
+
+
+       	  
+        </ul>
+  </div>
+  <div class="sto_con_bot">
+    	<div class="sto_con_bot_top">
+        	<div class="sto_bot_left">
+            	<dl class="sto_bot_left_dl">
+               
+                	<dt>商品</dt> 
+                  <!--
+                    <h3>商品展示</h3> -->
+                  
+                    
+                    <dd><a class="news" href="{:U('Index/index',array('goods_id'=>$category_id,'new'=>1))}">最新</a></dd>
+
+                    <dd><a class="moneys" href="{:U('Index/index',array('goods_id'=>$category_id,'money'=>1))}">价格</a></dd>
+                    
+                    <dd><a class="people" href="{:U('Index/index',array('goods_id'=>$category_id,'shu'=>1))}">人气</a></dd> 
+                </dl>
+                
+              <ul class="sto_bot_left_ul">
+                	<li>
+                    <input class="yaya" name="" type="checkbox" value="0" class="sto_bot_text" onclick="tejia()" value="" />
+                    <p>特价</p>
+                    </li>
+                	<li><input class="chacha" onclick="yishou()" name="" type="checkbox" value="0" class="sto_bot_text"  value="" /><p>已售</p></li>
+                </ul> 
+
+          </div>
+          <div class="sto_bot_right">
+           	<dl class="sto_bot_right_dl">
+            <!--
+                    <div id="page">
+                    <?php echo $page?>
+                    </div> -->
+                    
+                </dl>
+          </div>
+        </div>
+    </div>
+    <div class="sto_content_show">
+    	<ul class="sto_con_show_ul">
+         <?php if(!empty($lost)):?>
+            <?php foreach($lost as $val):?>
+                <div onclick="shu(<?php echo $val['id']?>)">
+        	<li>
+            	<a  href="{:U('index/xgoods',array('id'=>$val['id']))}" class="sto_a1">
+                    <img id="lli" class="wocha" style="height:230px;width:230px;" src="__ROOT__/Uploads/<?php echo reurl(getonepicture($val['id']));?>" />
+                    </a>
+                <a href="#" class="sto_a2"><?php echo $val['name']?><br><?php echo $val['money']?>元</a>
+
+
+			</li>
+            </div>
+            <?php endforeach;?>
+        <?php endif;?>
+        	
+        </ul>
+    </div>
+    <div class="sto_bot_pages">
+        
+        
+    	<div class="sto_pages_div">
+        <!--
+        	<p>总计<span>51</span>个记录，共<span>3</span>页</p> -->
+
+               <div id="page">
+              <?php echo $page;?>
+              </div>
+               <script type="text/javascript">
+                var aleng = $('#page a').length;
+                var current = $('#page .current').html();
+                $('#page .end').html('最后一页');
+                var first = $('#page .first').html();
+                if(first && current>=7){
+                  $('#page .first').html(1);
+                  if(current>7){
+                    $('#page .first').after('<b>...</b>');
+                  }
+                  
+                }
+             
+              </script>
+
+
+            <!--
+            <dl class="sto_pages_dl">
+                <dd><a href="#">1</a></dd>
+                <dd><a href="#">2</a></dd>
+                <dd><a href="#">3</a></dd>
+                <dd><a href="#">&gt;&gt;</a></dd>
+                <dd><a href="#">尾页</a></dd>
+            </dl> -->
+        </div>
+    </div>
+</div>
+</div>
